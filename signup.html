@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        h1 {
+          text-align: center;
+        }
+        #para{
+        text-align: center;
+        color: gray;
+        }
+        input{
+          padding: 10px;
+          border-radius: 5px; 
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          width: 400px;
+          margin: auto;
+          padding: 30px;
+        }
+        button{
+          margin: 40px;
+          color: gray;
+          padding: 10px;
+          font-size: 18px;
+          background-color: white;
+        }
+       
+      </style>
+</head>
+<body>
+        <h1>Create An Account</h1>
+        <p id="para">Welcome to Anthropologie! It's quick and easy to set up an account.</p>
+        <form>
+            <p>Name*</p>
+        <input id="name" type="text" />
+        <p>Email*</p>
+        <input id="email" type="text" />
+        <p>Password</p>
+        
+        <input type="password" placeholder="Enter password" autocomplete="current-password" required="" id="password">
+  
+        <button id="signup">SIGN UP</button>
+         <div id="discri">
+            By creating an account, you agree to Anthropologie's <a href="">terms of use</a>
+        and <a href="">privacy policy.</a> Landlines, VoIP, and prepaid phones are not supported. Standard message & data rates may apply. Message frequency may vary. Reply HELP for help, and STOP to cancel. <a href="">Contact us </a> for more information.
+
+    </div> 
+    <h1>Already Have an Account?</h1>
+    <button>SIGN IN</button>
+        </form>
+</body>
+</html>
+
+<script>
+    let form = document.querySelector("form");
+    
+    let userData =JSON.parse(localStorage.getItem("userData")) || [];
+    
+    form.addEventListener("submit",function(event){
+      event.preventDefault();
+      let data={
+           email:form.email.value,
+           password:form.password.value
+      }
+        if(checkEmails(data.email)===true){
+          userData.push(data);
+          localStorage.setItem("userData", JSON.stringify(userData));
+        }else{
+          alert("Account Already Exists");
+        }
+    })
+    function checkEmails(email){
+      let filterd = userData.filter(function(element){
+        return email === element.email;
+      })
+      if(filterd.length > 0){
+        return false;
+      }else{
+        return true;
+      }
+    }
+    </script>

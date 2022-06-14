@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIn</title>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+      input{
+        padding: 10px;
+        /* border-radius: 5px; */
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: auto;
+        padding: 30px;
+      }
+      /* #email{
+        border-color: green;
+      } */
+      #para{
+        text-align: center;
+        color: gray;
+      }
+      #discri{
+        color: gray;
+        padding-top: 20px;
+        font-size: 8px;
+      }
+      button{
+        margin-top: 40px;
+        padding: 12px;
+        color: gray;
+        font-size: 18px;
+        background-color: white;
+      }
+      /* #signun{
+        text-align: center;
+        font-size: 16px;
+        color: gray;
+      } */
+      #togglePassword{
+        cursor: pointer;
+      }
+      #comment{
+        text-align: center;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>Sign In</h1>
+      <form>
+        <p id="para">Sign in so you can save items to your wishlists, track your orders, and check out faster!</p>
+
+      <p>Email*</p>
+      <input id="email" type="text" />
+      <p>Password*</p>
+      <input type="password" autocomplete="current-password" required="" id="password">
+      <button id="signIn">SIGN IN</button>
+
+      
+      <h1>Sign Up</h1>
+      <p id="comment">Welcome! It's quick and easy to set up an account</p>
+      <button id="signup">CREATE AN ACCOUNT</button>
+      </form>
+      <!-- <div id="signIn">Already have an account? <a href="">Sign in</a></div> -->
+      
+  </body>
+</html>
+
+
+
+<script>
+    let form=document.querySelector("form");
+
+    let userData=JSON.parse(localStorage.getItem("userData")) || [];
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault()
+        let data={
+            email:form.email.value,
+            password:form.password.value,
+
+        }
+
+        if(checkSignin(data.email,data.password)===true){
+            localStorage.setItem("signin",JSON.stringify(data));
+            alert("Sign in Successful");
+            window.location.href="index.html";
+        }else{
+            alert("Wrong Username or Password");
+        }
+    })
+    function checkSignin(email,password){
+        let filter= userData.filter(function(element){
+            return element.email === email && element.password === password;
+        })
+        if(filter.length>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>

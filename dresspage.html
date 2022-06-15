@@ -15,7 +15,7 @@
         }
         #container>div>img{
             width: 100%;
-            height: 80%;
+            height: 75%;
         }
         #container>div>button{
             margin-right: 20px;
@@ -30,9 +30,44 @@
         #sorting>h4{
             margin-right: 30px;
         }
+        #filter{
+          display: flex;
+          justify-content: space-around;
+        }
+        #filter>div{
+          width: 15%;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(207, 78, 164);
+          font-size: 20px;
+          color: white;
+        }
+        #page{
+          text-align: center;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+        #filter>div:hover{
+          background-color: rgb(147, 85, 206);
+        }
+        #intro{
+          font-size: 25px;
+          margin-left: 30px;
+          font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <p id="page">Clothing / Dresses</p>
+    <div id="filter">
+      <div id="casual">Casual</div>
+      <div id="party">Party</div>
+      <div id="sports">Sports</div>
+      <div id="festive">festive</div>
+      <div id="formal">formal</div>
+    </div>
     <div id="sorting">
         <h4>Sorting :- </h4>
         <select id="pricechange" onChange="pricesort()">
@@ -44,7 +79,7 @@
     </div>
     
 
-
+    <p id="intro">Dresses</p>
     <div id="container">
 
     </div>
@@ -315,6 +350,8 @@
   },   
     ]
 
+    let cartLS=JSON.parse(localStorage.getItem("cartpage"))||[];
+
     displayproduct(productData);
 
     function displayproduct(productData){
@@ -329,8 +366,22 @@
     price.innerText="RS - "+el.price;
     let addtocart=document.createElement("button");
     addtocart.innerText="Add To Cart";
+
+    addtocart.addEventListener("click",function(){
+      if(addcartfunction(el.productID)===true){
+        alert("Added Product Sucessfully");
+        cartLS.push(el);
+        localStorage.setItem("cartpage",JSON.stringify(cartLS));
+      }else{
+        alert("Product Already Exists")
+      };
+    })
+
     let buynow=document.createElement("button");
     buynow.innerText="Buy Now";
+
+    buynow.addEventListener("click",paymentpage);
+
 
     product.append(img,name,price,addtocart,buynow)
     document.querySelector("#container").append(product);
@@ -353,4 +404,74 @@
         displayproduct(productData);
       }
     }
+
+    document.querySelector("#casual").addEventListener("click",function(){
+      displaycasual();
+    });
+
+    function displaycasual(){
+      let filtered=productData.filter(function(el){
+        return el.catagory==="Casual";
+      })
+      displayproduct(filtered);
+    }
+
+
+    document.querySelector("#party").addEventListener("click",function(){
+      displayitem();
+    });
+
+    function displayitem(){
+      let filtered=productData.filter(function(el){
+        return el.catagory==="party";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#sports").addEventListener("click",function(){
+      displaysports();
+    });
+
+    function displaysports(){
+      let filtered=productData.filter(function(el){
+        return el.catagory==="sports";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#festive").addEventListener("click",function(){
+      displayfestive();
+    });
+
+    function displayfestive(){
+      let filtered=productData.filter(function(el){
+        return el.catagory==="festive";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#formal").addEventListener("click",function(){
+      displayformal();
+    });
+
+    function displayformal(){
+      let filtered=productData.filter(function(el){
+        return el.catagory==="formal";
+      })
+      displayproduct(filtered);
+    }
+
+    function addcartfunction(id){
+    for(let i=0;i<cartLS.length;i++){
+    if(cartLS[i].productID==id){
+    return false;
+    }
+    }
+    return true;
+    }
+
+    function paymentpage(){
+      window.location.href="payment.html";
+      alert("redirect to payment page");
+    };
 </script>

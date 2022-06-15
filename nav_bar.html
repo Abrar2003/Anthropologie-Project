@@ -9,21 +9,16 @@
       body {
         margin: 0;
         padding: 0;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: "Times New Roman", Times, serif;
       }
-      #main{
-        background-color: white;
-        top: 0px;
-        position:sticky;
-      }
-      #banner2{
+      #banner2 {
         color: rgb(126, 181, 218);
         display: flex;
         justify-content: right;
         padding: 0% 10%;
-        background-color: #F7F6F2;
+        background-color: #f7f6f2;
       }
-      #banner2>select {
+      #banner2 > select {
         color: rgb(126, 181, 218);
         margin-right: 20px;
         border: none;
@@ -31,8 +26,11 @@
         background-color: transparent;
       }
       #first {
+        position: sticky;
+        top: 0px;
         display: flex;
         width: 80%;
+        background-color: white;
         padding: 0% 10%;
         height: 60px;
         margin: auto;
@@ -41,12 +39,13 @@
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
           rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
       }
-      #first > div:first-child {
+      #left {
         display: flex;
         width: 30%;
       }
       #left > div:first-child {
         /* border: 1px solid blue; */
+        border-top: 3px solid teal;
         display: flex;
         width: 55%;
         height: 60px;
@@ -64,7 +63,7 @@
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
           rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
       }
-      #right{
+      #right {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -78,7 +77,7 @@
         padding: 0px 5px;
         border: 1px solid;
       }
-      .icon{
+      .icon {
         width: 20px;
         height: 20px;
       }
@@ -88,6 +87,9 @@
       }
 
       #second {
+        position: sticky;
+        top: 60px;
+        background-color: white;
         display: flex;
         width: 80%;
         height: 60px;
@@ -101,61 +103,117 @@
         font-size: 18px;
         margin-right: 20px;
       }
+
+      @media all and (min-width: 320px) and (max-width: 1000px) {
+        #first {
+          width: 100%;
+          height: 120px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0%;
+          position: sticky;
+          background-color: white;
+          top: 0px;
+        }
+        #left {
+          width: 100%;
+          display: flex;
+          /* border: 1px solid red; */
+          justify-content: space-between;
+        }
+        #left > div:first-child {
+          margin: 0%;
+          width: 50%;
+        }
+        #left > div:last-child {
+          margin: 0%;
+          width: 50%;
+        }
+        #right {
+          padding: 0% 5%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+        #search {
+          justify-content: space-between;
+        }
+        #left img {
+          width: 50%;
+        }
+        #second{
+          position: static;
+        }
+      }
+        #body{
+          height: 1000px;
+          background-color: red;
+        }
     </style>
   </head>
   <body>
-<div id="banner1">
-
-</div>
-<div id="banner2">
-    <select name="" id="lang" value="">
+    <div id="banner1"></div>
+    <div id="banner2">
+      <select name="" id="lang" value="">
         <option value="English ($)">English ($)</option>
         <option value="French ($)">French ($)</option>
-    </select>
-    <p>Sign in / Sign up</p>
-</div>
+      </select>
+      <p>Sign in / Sign up</p>
+    </div>
 
-    <div id="main">
-      <div id="first">
-        <div id="left">
-          <!-- Anthropologie logo -->
+    <!-- <div id="main"> -->
+    <div id="first">
+      <div id="left">
+        <!-- Anthropologie logo -->
 
-          <div>
-            <img
-              src="https://images.ctfassets.net/5de70he6op10/53ZOE4rRqrxcvv0hg2eSLV/a849085e5f600c618132be2475017746/anthro-logo.svg"
-              alt="Error"
-            />
-          </div>
-          <div>
-            <img
-              src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg"
-              alt="Error"
-            />
-          </div>
+        <div>
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/53ZOE4rRqrxcvv0hg2eSLV/a849085e5f600c618132be2475017746/anthro-logo.svg"
+            alt="Error"
+          />
         </div>
-        <div id="right">
-          <div id="search">
-            <input type="text" placeholder="Searc Anthropologie" />
-            <img class='icon'src="https://cdn.icon-icons.com/icons2/2551/PNG/512/search_icon_152764.png" alt="" />
-          </div>
-          <div id="cart">
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/128/3916/3916639.png" alt="">
-          </div>
+        <div>
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg"
+            alt="Error"
+          />
         </div>
       </div>
-      <div id="second">
-        <p>New!</p>
-        <p>Dresses</p>
-        <p>Clothing</p>
-        <p>Shoes</p>
-        <p>Accessories</p>
-        <p>Gifts & Candles</p>
-        <p>Home & Furniture</p>
-        <p>beauty & Wellness</p>
-        <p>Garden & Outdoor</p>
-        <p>Weddings</p>
-        <p>Sale</p>
+      <div id="right">
+        <div id="search">
+          <input type="text" placeholder="Searc Anthropologie" />
+          <img
+            class="icon"
+            src="https://cdn.icon-icons.com/icons2/2551/PNG/512/search_icon_152764.png"
+            alt=""
+          />
+        </div>
+        <div id="cart">
+          <img
+            class="icon"
+            src="https://cdn-icons-png.flaticon.com/128/3916/3916639.png"
+            alt=""
+          />
+        </div>
       </div>
     </div>
+    <div id="second">
+      <p>New!</p>
+      <p>Dresses</p>
+      <p>Clothing</p>
+      <p>Shoes</p>
+      <p>Accessories</p>
+      <p>Gifts & Candles</p>
+      <p>Home & Furniture</p>
+      <p>beauty & Wellness</p>
+      <p>Garden & Outdoor</p>
+      <p>Weddings</p>
+      <p>Sale</p>
+    </div>
+    <!-- </div> -->
+    <div id="body"></div>
   </body>
 </html>

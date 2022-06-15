@@ -23,6 +23,10 @@
         padding: 0% 10%;
         background-color: #F7F6F2;
       }
+      #banner2 a{
+        color: rgb(126, 181, 218);
+        text-decoration: none;
+      }
       #banner2>select {
         color: rgb(126, 181, 218);
         margin-right: 20px;
@@ -33,6 +37,7 @@
       #first {
         display: flex;
         width: 80%;
+        height: 60px;
         padding: 0% 10%;
         height: 60px;
         margin: auto;
@@ -41,11 +46,12 @@
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
           rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
       }
-      #first > div:first-child {
+      #left{
         display: flex;
         width: 30%;
       }
       #left > div:first-child {
+        border-top: 3px solid teal;
         /* border: 1px solid blue; */
         display: flex;
         width: 55%;
@@ -58,6 +64,7 @@
       #left > div:last-child {
         /* border: 1px solid blue; */
         display: flex;
+        height: auto;
         width: 45%;
         justify-content: center;
         align-items: center;
@@ -72,7 +79,7 @@
       }
       #search {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         width: 80%;
         padding: 0px 5px;
@@ -90,7 +97,7 @@
       #second {
         display: flex;
         width: 80%;
-        height: 60px;
+        /* height: 60px; */
         padding: 0% 10%;
         margin: auto;
         align-items: center;
@@ -100,6 +107,44 @@
       #second > p {
         font-size: 18px;
         margin-right: 20px;
+      }
+
+      @media all and (min-width: 320px) and (max-width: 1000px){
+        #first{
+          width: 100%;
+          height: 120px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0%;
+        }
+        #left{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+        #left>div:first-child{
+          margin: 0%;
+          width: 50%;
+        }
+        #left>div:last-child{
+          margin: 0%;
+          width: 50%;
+        }
+        #right{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+      }
+      #left img{
+        width: 50%;
+      }
+        #second{
+          display: flex;
+          flex-wrap: wrap;
+        }
       }
     </style>
   </head>
@@ -112,7 +157,7 @@
         <option value="English ($)">English ($)</option>
         <option value="French ($)">French ($)</option>
     </select>
-    <p>Sign in / Sign up</p>
+    <a href="signup.html"><p>Sign in / Sign up</p></a>
 </div>
 
     <div id="main">

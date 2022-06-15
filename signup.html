@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      #para {
+        text-align: center;
+        color: gray;
+        width: 370px;
+      }
+      input {
+        padding: 10px;
+        /* border-radius: 5px;  */
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: auto;
+        padding: 30px;
+        font-family: sans-serif;
+      }
+      #signup:hover{
+        background-color: #4b5666;
+        color: white;
+      }
+      button:hover{
+        background-color: #4b5666;
+      }
+      #href:hover{
+        color: white;
+      }
+      button {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        color: gray;
+        padding: 10px;
+        font-size: 18px;
+        background-color: white;
+        cursor: pointer;
+      }
+      #button {
+        margin-top: -10px;
+        cursor: pointer;
+      }
+      #discri{
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: rgb(69, 66, 66);
+      }
+      hr {
+        width: 100%;
+      }
+      #href{
+        color: gray;
+        /* text-underline-offset: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h2>Create An Account</h2>
+      <hr />
+      <p id="para">
+        Welcome to Anthropologie! It's quick and easy to set up an account.
+      </p>
+      <p>Name*</p>
+      <input id="name" type="text" />
+      <!-- <p>Number*</p>
+        <input id="number" type="text" /> -->
+      <p>Email*</p>
+      <input id="email" type="text" />
+      <p>Password</p>
+
+      <input
+        type="password"
+        autocomplete="current-password"
+        required=""
+        id="password"
+      />
+
+      <button id="signup">SIGN UP</button>
+      <div id="discri">
+        By creating an account, you agree to Anthropologie's
+        <a href="">terms of use</a> and
+        <a href="">privacy policy.</a> Landlines, VoIP, and prepaid phones are
+        not supported. Standard message & data rates may apply. Message
+        frequency may vary. Reply HELP for help, and STOP to cancel.
+        <a href="">Contact us </a> for more information.
+      </div>
+      <hr>
+      <h2>Already Have an Account?</h2>
+      <a href="signin.html" id="href"> <button>SIGN IN</a></button>
+      
+    </form>
+  </body>
+</html>
+
+<script>
+  let form = document.querySelector("form");
+
+  let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let data = {
+      name: form.name.value,
+      email: form.email.value,
+      password: form.password.value,
+    };
+    if (checkEmails(data.email) === true) {
+      userData.push(data);
+      localStorage.setItem("userData", JSON.stringify(userData));
+    } else {
+      alert("Signup Successfully");
+    }
+  });
+  function checkEmails(email) {
+    let filterd = userData.filter(function (element) {
+      return email === element.email;
+    });
+    if (filterd.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>

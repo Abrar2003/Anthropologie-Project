@@ -8,17 +8,19 @@
     <style>
         #container{
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(5,1fr);
             grid-template-rows: auto;
             gap: 30px;
             padding: 20px;
         }
         #container>div>img{
             width: 100%;
-            height: 75%;
+            height: 60%;
         }
         #container>div>button{
             margin-right: 20px;
+            border: transparent;
+            height: 30px;
         }
         #sorting{
             width: 100%;
@@ -89,6 +91,7 @@
     let productData=[
     {
     brand: "Sparky",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzl7IX9xne0TjKA9DhVZyhl91W-zcO9zBJw&usqp=CAU",
     name: "Eylis brach Slip Dress",
     price: "480",
     size: "X,XX,XXL",
@@ -98,6 +101,7 @@
   },
     {
     brand: "Classic",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbAmuYdAqY6ld_w2xR6FVhWZnfwZPn4X3dNA&usqp=CAU",
     name: "Halter Mini Dress",
     price: "950",
     size: "X,XX,XXL",
@@ -107,6 +111,7 @@
   },
     {
     brand: "Sparky",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrbNaqFQ2sYx691wMwI6YwkCg7YVwpE0IL2g&usqp=CAU",
     name: "Sweta Maxi Dress",
     price: "1590",
     size: "X,XX,XXL",
@@ -116,6 +121,7 @@
   },
     {
     brand: "Classic",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN4yvZpDm9EU7HsxeNlY9Aq1fUSqKoKUYMJA&usqp=CAU",
     name: "Aesome Party Dress",
     price: "1895",
     size: "X,XX,XXL",
@@ -125,6 +131,7 @@
   },
     {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJw9T6AaP91X4x19FRfYQrU2C4NkL72zecLw&usqp=CAU",
     name: "selena floral FileList",
     price: "2000",
     size: "X,XX,XXL",
@@ -134,6 +141,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMEMCmUuZXJssNZVcOtfVYhlWY47EQ60NUTg&usqp=CAU",
     name: "balck bella",
     price: "1347",
     size: "X,M,L,XX,XXL",
@@ -143,6 +151,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtMVTporI3avklfRNFa0iBXJ9q9WaCRtjZDA&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "799",
     size: "M,L,XX,XXS",
@@ -152,6 +161,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuF7qza2LPuUA3mu_FJ7qsO3qOHdRjjlUguw&usqp=CAU",
     name: "plus size womens",
     price: "2000",
     size: "X,M,L,XXS,XXL",
@@ -161,6 +171,7 @@
   },
   {
     brand: "Bady Moo",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ23rlcTLnbnAc668zu7NwG26z7LlCJ4YEyEg&usqp=CAU",
     name: "balck bella",
     price: "1347",
     size: "X,M,L",
@@ -170,6 +181,7 @@
   },
   {
     brand: "Pepe jeans",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgMOBrkMKbyIWGeB2GwIv7J-QMmPd-hEXxHg&usqp=CAU",
     name: "plus size womens",
     price: "979",
     size: "XXS,M,L",
@@ -179,6 +191,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcaRbjzonY1TBgGt0-iEux0lYkc2Afum4ZsA&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "2000",
     size: "XXL,M,L",
@@ -188,6 +201,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREa7zacBLpK6n0fLZYknjxtOp3vmHY-b4Orw&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "1347",
     size: "X,M,L,XX",
@@ -197,6 +211,7 @@
   },
   {
     brand: "Bady Moo",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj3_5d4Ae3jZDIs7OKr-gSrQBcAHmhjlrLig&usqp=CAU",
     name: "balck bella",
     price: "976",
     size: "XS,M,L,XX",
@@ -206,6 +221,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jvbr0T4oV3SfxbOKxP9_KLs-vWkaEZsF8A&usqp=CAU",
     name: "woman cotton off white",
     price: "456",
     size: "X,L,XX",
@@ -215,6 +231,7 @@
   },
   {
     brand: "Bee bay",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_p_DFrMwkl-8z4kLEbtymZ9X8bHwxdw7oDw&usqp=CAU",
     name: "woman cotton off white",
     price: "986",
     size: "M,L,XXS",
@@ -224,6 +241,7 @@
   },
   {
     brand: "Kaniroot",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS8v-e3TkCTdGfiBFya4RhCgLsNKZRyQSlug&usqp=CAU",
     name: "chill pill supersoft",
     price: "567",
     size: "S,M,L,XXl",
@@ -233,6 +251,7 @@
   },
   {
     brand: "Bee bay",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA1frcMrqnv4yFcVqXE9Ltrt5rmLZmVjTW3A&usqp=CAU",
     name: "Curev multi-Color",
     price: "765",
     size: "S,X,L,XXl",
@@ -242,6 +261,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl1Y_iC40lch5zTZgCzr_-hr2UhQOBXtH2ww&usqp=CAU",
     name: "Mega striple",
     price: "9999",
     size: "S,M,X,XXL",
@@ -251,6 +271,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdS-JkeFeQ5vpxUfDgsQv-FzN4McGoGthSsA&usqp=CAU",
     name: "balck bella",
     price: "1347",
     size: "S,M,X,XXL",
@@ -260,6 +281,7 @@
   },
   {
     brand: "Kaniroot",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn727OMJsaoownVAItfQIcbNA7VKrqvxzzxQ&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "799",
     size: "S,M,L,XXL",
@@ -269,6 +291,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdf_nhJLqKOEsYkYXQQXGvkOvZp1un6X5Xqw&usqp=CAU",
     name: "plus size womens",
     price: "2000",
     size: "S,XX",
@@ -278,6 +301,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfqupNCxHL1vpiNqovvUpvwIlSZlbjODXTBg&usqp=CAU",
     name: "balck bella",
     price: "1347",
     size: "S,M,XX,XXL",
@@ -287,6 +311,7 @@
   },
   {
     brand: "Bee bay",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjN9twBi4rdTnd7HeRgqAe7fMDiMnYAwIAvw&usqp=CAU",
     name: "plus size womens",
     price: "979",
     size: "M,XXL,XX",
@@ -296,6 +321,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShxsQUwBbvUpk5F5L2k02vFuEPl3OB2qQTNw&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "2000",
     size: "M,X,L,XXL",
@@ -305,6 +331,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIfKWsghJQs_4nYdN4suHSE2i5Nd33vHeDA&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "1347",
     size: "M,L,XXL",
@@ -314,6 +341,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM2-RBV3EEp8ZirVgYt217jOBbV3perQsgJA&usqp=CAU",
     name: "balck bella",
     price: "976",
     size: "S,XX",
@@ -323,6 +351,7 @@
   },
   {
     brand: "Puma",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDnfOg4s1yfnHY792GVy5nxUr5bctA911N2g&usqp=CAU",
     name: "woman cotton off white",
     price: "456",
     size: "XXL",
@@ -332,6 +361,7 @@
   },
   {
     brand: "Gap",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyaeNp4Ow__ad-7c1PXQHiNiIlqz-A_xzYtQ&usqp=CAU",
     name: "woman cotton off white",
     price: "986",
     size: "S,X,L",
@@ -341,6 +371,7 @@
   },
   {
     brand: "Kaniroot",
+    img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjpRjosqhlXyIibzPaDMwYBZdh3ApRBk6c5g&usqp=CAU",
     name: "chill pill supersoft",
     price: "567",
     size: "S,XXL,XX",
@@ -360,12 +391,25 @@
     let product=document.createElement("div");
     let img=document.createElement("img");
     img.src=el.img;
+
+    img.addEventListener("mouseover",function(){
+    img.setAttribute("src", el.img2);
+    });
+    img.addEventListener("mouseout",function(){
+    img.setAttribute("src", el.img);
+    });
+
     let name=document.createElement("h2");
     name.innerText=el.name;
+    name.style.color="blue";
+
     let price=document.createElement("p");
     price.innerText="RS - "+el.price;
+    price.style.color="red";
+
     let addtocart=document.createElement("button");
     addtocart.innerText="Add To Cart";
+    addtocart.style.backgroundColor="red";
 
     addtocart.addEventListener("click",function(){
       if(addcartfunction(el.productID)===true){
@@ -379,6 +423,7 @@
 
     let buynow=document.createElement("button");
     buynow.innerText="Quick Shop";
+    buynow.style.backgroundColor="green";
 
     buynow.addEventListener("click",paymentpage);
 

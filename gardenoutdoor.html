@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden & Outdoor | Anthropologie</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 30px;
+            padding: 20px;
+        }
+        #container>div>img{
+            width: 100%;
+            height: 75%;
+        }
+        #container>div>button{
+            margin-right: 20px;
+        }
+        #sorting{
+            width: 100%;
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+        #sorting>h4{
+            margin-right: 30px;
+        }
+        #filter{
+          display: flex;
+          justify-content: space-around;
+        }
+        #filter>div{
+          width: 15%;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(207, 78, 164);
+          font-size: 20px;
+          color: white;
+        }
+        #intro{
+          font-size: 25px;
+          margin-left: 30px;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+        <div id="sorting">
+        <h4>Sorting :- </h4>
+        <select id="pricechange" onChange="pricesort()">
+            <option>Sort By Price</option>
+            <option value="Assending">Low To High</option>
+            <option value="Desending">High To Low</option>
+        </select>
+
+    </div>
+    
+
+    <p id="intro">Garden & Outdoor</p>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    let productData=[
+    {
+    brand: "Sparky",
+    name: "Peacock Ottoman",
+    price: "480",
+    size: "X,XX,XXL",
+    productID: "women31",
+    catagory: "Party",
+    img: "https://images.urbndata.com/is/image/Anthropologie/B45246403AA_014_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Classic",
+    name: "Peacock Daybed",
+    price: "950",
+    size: "X,XX,XXL",
+    productID: "women32",
+    catagory: "Party",
+    img: "https://images.urbndata.com/is/image/Anthropologie/45246403AA_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Sparky",
+    name: "Hanging Chair",
+    price: "1590",
+    size: "X,XX,XXL",
+    productID: "women33",
+    catagory: "NightDress",
+    img: "https://images.urbndata.com/is/image/Anthropologie/55882518_041_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Classic",
+    name: "Iron Topiary Frame",
+    price: "1895",
+    size: "X,XX,XXL",
+    productID: "women34",
+    catagory: "Sports",
+    img: "https://images.urbndata.com/is/image/Anthropologie/67909044_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Puma",
+    name: "Dried Yarrow Bunch",
+    price: "2000",
+    size: "X,XX,XXL",
+    productID: "women1",
+    catagory: "Casual",
+    img: "https://images.urbndata.com/is/image/Anthropologie/62290259_072_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Masaya Dining Table",
+    price: "1347",
+    size: "X,M,L,XX,XXL",
+    productID: "women2",
+    catagory: "festive",
+    img: "https://images.urbndata.com/is/image/Anthropologie/66895517_014_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Japanense Flower Set",
+    price: "799",
+    size: "M,L,XX,XXS",
+    productID: "women3",
+    catagory: "party",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65525842_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Colorful Glass Frame",
+    price: "2000",
+    size: "X,M,L,XXS,XXL",
+    productID: "women4",
+    catagory: "formal",
+    img: "https://images.urbndata.com/is/image/Anthropologie/64281793_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bady Moo",
+    name: "Green Wall Frame",
+    price: "1347",
+    size: "X,M,L",
+    productID: "women5",
+    catagory: "workout",
+    img: "https://images.urbndata.com/is/image/Anthropologie/69342608_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Pepe jeans",
+    name: "Soul Decorator",
+    price: "979",
+    size: "XXS,M,L",
+    productID: "women6",
+    catagory: "travel",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65599151_004_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Ceramic Planter",
+    price: "2000",
+    size: "XXL,M,L",
+    productID: "women7",
+    catagory: "sports",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65618688_095_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Bird of Paradise",
+    price: "1347",
+    size: "X,M,L,XX",
+    productID: "women8",
+    catagory: "Casual",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65630923_040_b10?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bady Moo",
+    name: "Wooden Bag Stylish",
+    price: "976",
+    size: "XS,M,L,XX",
+    productID: "women9",
+    catagory: "festive",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65814550_020_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Soul Planter Gift",
+    price: "456",
+    size: "X,L,XX",
+    productID: "women10",
+    catagory: "party",
+    img: "https://images.urbndata.com/is/image/Anthropologie/59352039_012_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+  },
+  {
+    brand: "Bee bay",
+    name: "Table Flore Decorator",
+    price: "986",
+    size: "M,L,XXS",
+    productID: "women11",
+    catagory: "formal",
+    img: "https://images.urbndata.com/is/image/Anthropologie/67976555_066_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Kaniroot",
+    name: "Japanese Water Jug",
+    price: "567",
+    size: "S,M,L,XXl",
+    productID: "women12",
+    catagory: "workout",
+    img: "https://images.urbndata.com/is/image/Anthropologie/64741697_030_b?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bee bay",
+    name: "Golden Dragon Plant",
+    price: "765",
+    size: "S,X,L,XXl",
+    productID: "women13",
+    catagory: "travel",
+    img: "https://images.urbndata.com/is/image/Anthropologie/68956697_066_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Soul Pot of French",
+    price: "9999",
+    size: "S,M,X,XXL",
+    productID: "women14",
+    catagory: "sports",
+    img: "https://images.urbndata.com/is/image/Anthropologie/66772880_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Wooden Chair Outside",
+    price: "1347",
+    size: "S,M,X,XXL",
+    productID: "women15",
+    catagory: "Casual",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65547580_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Kaniroot",
+    name: "Scatch Planter Soft",
+    price: "799",
+    size: "S,M,L,XXL",
+    productID: "women16",
+    catagory: "festive",
+    img: "https://images.urbndata.com/is/image/Anthropologie/48097422_070_b4?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Paper Gift Decor",
+    price: "2000",
+    size: "S,XX",
+    productID: "women17",
+    catagory: "party",
+    img: "https://images.urbndata.com/is/image/Anthropologie/67028142_010_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Ceramic Chair Outdoor",
+    price: "1347",
+    size: "S,M,XX,XXL",
+    productID: "women18",
+    catagory: "formal",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65547580_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bee bay",
+    name: "Ptretor Bab Rome",
+    price: "979",
+    size: "M,XXL,XX",
+    productID: "women19",
+    catagory: "workout",
+    img: "https://images.urbndata.com/is/image/Anthropologie/66589185_018_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Softness bowl Of Cottor",
+    price: "2000",
+    size: "M,X,L,XXL",
+    productID: "women20",
+    catagory: "travel",
+    img: "https://images.urbndata.com/is/image/Anthropologie/56292600_010_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Room Rose Potter",
+    price: "1347",
+    size: "M,L,XXL",
+    productID: "women21",
+    catagory: "sport",
+    img: "https://images.urbndata.com/is/image/Anthropologie/64281900_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Fren Root Wreath",
+    price: "976",
+    size: "S,XX",
+    productID: "women22",
+    catagory: "Casual",
+    img: "https://images.urbndata.com/is/image/Anthropologie/62938535_010_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Outside chair of Thick",
+    price: "456",
+    size: "XXL",
+    productID: "women23",
+    catagory: "festive",
+    img: "https://images.urbndata.com/is/image/Anthropologie/65547580_000_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+  },
+  {
+    brand: "Gap",
+    name: "Italish Bag of Demor",
+    price: "986",
+    size: "S,X,L",
+    productID: "women24",
+    catagory: "party",
+    img: "https://images.urbndata.com/is/image/Anthropologie/66589185_018_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Kaniroot",
+    name: "Fren Root Wreath",
+    price: "567",
+    size: "S,XXL,XX",
+    productID: "women25",
+    catagory: "formal",
+    img: "https://images.urbndata.com/is/image/Anthropologie/62938535_010_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },   
+    ]
+
+    let cartLS=JSON.parse(localStorage.getItem("cartpage"))||[];
+
+    displayproduct(productData);
+
+    function displayproduct(productData){
+    document.querySelector("#container").innerHTML="";
+    productData.forEach(function(el){
+    let product=document.createElement("div");
+    let img=document.createElement("img");
+    img.src=el.img;
+    let name=document.createElement("h2");
+    name.innerText=el.name;
+    let price=document.createElement("p");
+    price.innerText="RS - "+el.price;
+    let addtocart=document.createElement("button");
+    addtocart.innerText="Add To Cart";
+
+    addtocart.addEventListener("click",function(){
+      if(addcartfunction(el.productID)===true){
+        alert("Added Product Sucessfully");
+        cartLS.push(el);
+        localStorage.setItem("cartpage",JSON.stringify(cartLS));
+      }else{
+        alert("Product Already Exists")
+      };
+    })
+
+    let buynow=document.createElement("button");
+    buynow.innerText="Quick Shop";
+
+    buynow.addEventListener("click",paymentpage);
+
+
+    product.append(img,name,price,addtocart,buynow)
+    document.querySelector("#container").append(product);
+     });
+    } 
+    
+    function pricesort(){
+      let selected = document.querySelector("#pricechange").value;
+      if(selected=="Assending"){
+        productData.sort(function(a,b){
+          return (+a.price)-(+b.price);
+        });
+        
+        displayproduct(productData);
+      }
+      if(selected=="Desending"){
+        productData.sort(function(a,b){
+          return (+b.price)-(+a.price);
+        });
+        displayproduct(productData);
+      }
+    }
+
+   
+
+    function addcartfunction(id){
+    for(let i=0;i<cartLS.length;i++){
+    if(cartLS[i].productID==id){
+    return false;
+    }
+    }
+    return true;
+    }
+
+    function paymentpage(){
+      window.location.href="";
+      alert("redirect to payment page");
+    };
+</script>

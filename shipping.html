@@ -306,7 +306,9 @@
     if (flag) {
       localStorage.setItem("address", JSON.stringify(obj));
       console.log("Address Added");
+      window.location.href='payments-page.html'
     } else {
+      alert('Please fill the right Address');
       console.log("no");
     }
   }

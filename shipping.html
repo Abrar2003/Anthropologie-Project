@@ -159,6 +159,7 @@
         color: white;
         cursor: pointer;
       }
+      
     </style>
   </head>
   <body>
@@ -200,12 +201,12 @@
         <form>
           <label>Country/Region</label><br />
           <select name="" id="country" value="India">
-            <option value="in">India</option>
-            <option value="us">USA</option>
-            <option value="uk">United Kingdom</option>
-            <option value="rus">Russia</option>
-            <option value="chn">China</option>
-            <option value="jpn">Japan</option></select
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Russia">Russia</option>
+            <option value="China">China</option>
+            <option value="Japan">Japan</option></select
           ><br />
           <label>First Name*</label> <label>Last Name*</label><br />
           <input type="text" name="" id="first" />
@@ -215,9 +216,9 @@
             type="text"
             name=""
             id="add1"
-            placeholder="35 Letter Limit continue below"
+            placeholder="Building, Statue or Apartment Number"
           /><br />
-          <label>Address 2</label><br />
+          <label>Address 2*</label><br />
           <input
             type="text"
             name=""
@@ -288,7 +289,7 @@
       firstname: form.first.value,
       lastname: form.last.value,
       add1: form.add1.value,
-      // add2: form.add2.value,
+      add2: form.add2.value,
       city: form.city.value,
       code: form.post.value,
       reg: form.reg.value,
@@ -297,7 +298,7 @@
     localStorage.setItem('address',JSON.stringify(obj));
     let flag = true;
     for (let i in obj) {
-      if (obj[i] === "") {
+      if (obj[i] === "" ) {
         console.log(obj[i]);
         flag = false;
         break;
@@ -306,7 +307,7 @@
     if (flag) {
       localStorage.setItem("address", JSON.stringify(obj));
       console.log("Address Added");
-      window.location.href='payments-page.html'
+      window.location.href='Shipping2.html'
     } else {
       alert('Please fill the right Address');
       console.log("no");

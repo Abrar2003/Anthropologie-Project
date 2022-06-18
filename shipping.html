@@ -294,6 +294,7 @@
       reg: form.reg.value,
       phone: form.phone.value,
     };
+    localStorage.setItem('address',JSON.stringify(obj));
     let flag = true;
     for (let i in obj) {
       if (obj[i] === "") {
@@ -319,16 +320,19 @@
   let total = price + 60;
   document.querySelector("#total").append("$" + total);
 
+  let flag1 = localStorage.getItem('flag');
   function discount() {
     let promo = document.querySelector("#disc").value;
     console.log(promo);
     if (promo == "SUB20") {
+      flag1 = true;
       disc.removeEventListener("click", discount);
       price -= ((price / 100) * 20).toFixed(2);
       document.querySelector("#sub").innerText = "$" + price;
     }
 
     if (promo == "TOTAL20") {
+      flag1 = true;
       disc.removeEventListener("click", discount);
       document.querySelector('#total').innerText=''
       total -= ((total / 100) * 20).toFixed(2);
@@ -336,11 +340,12 @@
     }
 
     if (promo == "MASAI50") {
+      flag1 = true;
       disc.removeEventListener("click", discount);
       document.querySelector('#total').innerText=''
       total -= ((total / 100) * 50).toFixed(2);
       document.querySelector("#total").innerText = "$" + total;
     }
-     
+     localStorage.setItem('flag',flag);
   }
 </script>

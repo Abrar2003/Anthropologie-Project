@@ -1,42 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Women's Dresses | Anthropologie</title>
+    <title>Women's Dresses | Anthropologie</title>
     <style>
-        #container{
-            display: grid;
-            grid-template-columns: repeat(5,1fr);
-            grid-template-rows: auto;
-            gap: 30px;
-            padding: 20px;
+                                                 /* whole content in a single parent div  */
+        #parent {
+            width: 95%;
+            margin: auto;
+            display: flex;
         }
-        #container>div>img{
+
+                                                  /* 1st child div for left filter option  */
+        #left {
+            width: 15%;
+        }
+
+        #left>p {
+            border-bottom: 1px solid rgb(222, 222, 222);
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .left_font>div>a {
+            color: #26262c;
+            text-decoration: none;
+            font-family: "Avenir Book", sans-serif;
+            line-height: 25px;
+            font-size: 12px;
+        }
+
+        #option>div {
+            margin-bottom: 12px;
+        }
+        #option>div:nth-child(1)>a{
+            color: #47afe0;
+            border-bottom: 1px solid #47afe0;
+            
+        }
+
+        #option>div:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        #filter>h4 {
+            font-size: 18px;
+            color: gray;
+        }
+
+        #filter>h4:hover{
+            color: rgb(85, 82, 82);
+        }
+        #filter_heading {
+            border-bottom: 1px solid rgb(222, 222, 222);
+            margin: 40px auto 0px auto;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #filter>div {
+            padding: 20px 0;
+            border-bottom: 1px solid rgb(222, 222, 222);
+        }
+
+        .expand_opt {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .expand_opt:hover {
+            color: rgb(102, 168, 180);
+        }
+        .expand_opt::after{
+            content: "\002B";
+            font-weight: 600;  
+        }
+        .expand_opt.active::after{
+            content: "\2212";
+        }
+        #filter>div~div:hover{
+            color: rgb(102, 168, 180);
+        } 
+        .expand_opt{
+            width: 100%;
+            margin: 10px;
+        }
+        .left_font:hover{
+            cursor: pointer;
+        }
+        #main {
+            width: 80%;
+            margin: auto;
+        }
+
+        #sort_heading {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        #sorting {
+            display: flex;
+            align-items:center;
+            height: 80px;
+        }
+
+        select {
+            height: 35px;
+            border-radius: 5px;
+            padding: 3px;
+            margin-right: 20px;
+            width: 120px;
+           
+        }
+
+        #sorting>div {
+            margin-top: 5px;
+            margin-right: 10px;
+            font-weight: 200;
+        }
+        #caruser{
+            display: flex;
+        }
+        
+        #caruser>h2{
+            margin-top: 13px;
+            color: gray;
+            font-weight: 100;
+            font-size: 17px;
+        }
+        #caruser>button:first-child{
+            color: rgb(192, 189, 189);
+        }
+        #caruser>button{
+            font-size: 40px;
+            background-color: transparent;
+            border: none;
+            color: rgb(107, 103, 103);
+            margin-bottom: 10px;
+            
+        }
+        #caruser>button:hover{
+            cursor: pointer;
+        }
+        select:hover{
+            cursor: pointer;
+        }
+
+        #cat_title>div{
+            font-family: "" Avenir Medium", sans-serif;";
+            color: #3c3c3f;
+            display: flex;
+            width: 290px;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #product {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        #product>div>p {
+            font-family: "Avenir Medium", sans-serif;
+            font-size: 13px;
+            color: #26262c;
+            margin: 10px auto 10px auto;
+            margin: auto;
+        }
+
+        #product>div>img {
             width: 100%;
             height: 60%;
         }
-        #container>div>button{
-            margin-right: 20px;
-            border: transparent;
-            height: 30px;
+
+        #product>div>img+p:hover {
+            color: rgb(102, 168, 180);
+            cursor: pointer;
         }
-        #sorting{
-            width: 100%;
+
+        #product>div>img:hover {
+            cursor: pointer;
+        }
+
+        #product>div>div {
             display: flex;
-            height: 50px;
-            justify-content: center;
             align-items: center;
         }
-        #sorting>h4{
-            margin-right: 30px;
+
+        #Fst_color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #47afe0;
+            margin: 5px;
         }
-        #filter{
+
+        #Snd_color {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #e04847;
+            margin: 5px;
+        }
+
+        #Trd_color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #a7b6c5;
+            margin: 5px;
+        }
+
+        .color:hover {
+            border: 1px solid #6eacc9;
+            cursor: pointer;
+        }
+
+        #purchase_btn{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        #buynow_btn{
+            border: none;
+            height: 30px;
+            width: 80px;
+            border-radius: 3px;
+            background-color: rgba(231, 45, 45, 0.801);
+            color: white;
+            font-weight: 600;
+        }
+        #cart_btn {
+            border: none;
+            height: 30px;
+            font-size: 15px;
+            font-weight: 530;
+            border-radius: 6px;
+            background-color:#4b5666;
+            color: white;
+        }
+
+        #buynow_btn:hover{
+            background-color: rgb(243, 18, 18);
+            color: white;
+            cursor: pointer;
+        }
+
+        #cart_btn:hover {
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+        #filter1{
           display: flex;
           justify-content: space-around;
         }
-        #filter>div{
+        #filter1>div{
           width: 15%;
           height: 50px;
           display: flex;
@@ -45,52 +277,149 @@
           background-color: rgb(207, 78, 164);
           font-size: 20px;
           color: white;
+          margin-bottom: 20px;
         }
-        #page{
-          text-align: center;
-          margin-top: 30px;
-          margin-bottom: 30px;
-        }
-        #filter>div:hover{
+        #filter1>div:hover{
           background-color: rgb(147, 85, 206);
         }
-        #intro{
-          font-size: 25px;
-          margin-left: 30px;
-          font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <p id="page">Clothing / Dresses</p>
-    <div id="filter">
-      <div id="casual">Casual</div>
-      <div id="party">Party</div>
-      <div id="sports">Sports</div>
-      <div id="festive">festive</div>
-      <div id="formal">formal</div>
-    </div>
-    <div id="sorting">
-        <h4>Sorting :- </h4>
-        <select id="pricechange" onChange="pricesort()">
-            <option>Sort By Price</option>
-            <option value="Assending">Low To High</option>
-            <option value="Desending">High To Low</option>
-        </select>
-
-    </div>
     
+        @media all and (max-width:780px) and (min-width:320px){
+            #product{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        
+         
+    </style>
 
-    <p id="intro">Dresses</p>
-    <div id="container">
+</head>
 
+<body>
+  <div id="filter1">
+    <div id="casual">Casual</div>
+    <div id="party">Party</div>
+    <div id="sports">Sports</div>
+    <div id="festive">festive</div>
+    <div id="formal">formal</div>
+  </div>
+  <hr>
+<div id="parent">
+    <div id="left">
+    <p class="option_heading">Browse by:</p>
+    <div id="option" class="left_font">
+    <div><a href="">Clothing</a></div>
+    <div><a href="">New!</a></div>
+    <div><a href="">Top-Rated</a></div>
+    <div><a href="">Activewear</a></div>
+    <div><a href="">Dresses</a></div>
+    <div><a href="">Getaway & Resort Wear</a></div>
+    <div><a href="">Intimates& Lingerie</a></div>
+    <div><a href="">Jackets</a></div>
+    <div><a href="">Jeans</a></div>
+    <div><a href="">Jumpsuits</a></div>
+    <div><a href="">Kimonos</a></div>
+    <div><a href="">Lougewear</a></div>
+    <div><a href="">pants</a></div>
+    <div><a href="">Petites</a></div>
+    <div><a href="">Plus</a></div>
+    <div><a href="">Sets</a></div>
+    <div><a href="">Shorts</a></div>
+    <div><a href="">Skirts</a></div>
+    <div><a href="">Sleepwear</a></div>
+    <div><a href="">Sweaters</a></div>
+    <div><a href="">Swimwear</a></div>
+   <div><a href="">Tops & Tees</a></div>
+  </div>
+
+  <p id="filter_heading">Filter by:</p>
+  <div id="filter" , class="left_font">
+                <select id="price_opt"class="expand_opt">
+                    <option value="0">By Price</option>
+                    <option value="1">Less than $600</option>
+                    <option value="2">$600 - $1000</opion>
+                    <option value="3">$1000 - $1500</option>
+                    <option value="4">More than $2000</option>
+                    </select>
+
+                <select id=""class="expand_opt">
+                    <option value="0"> By Color </option>
+                    <option value="white"> White </option>
+                    <option value="blue"> Blue </option> 
+                    <option value="black"> Black </option>
+                    <option value="green"> Green </option> 
+                    <option value="red"> Red </option>
+                    <option value="yellow"> Yellow </option> 
+                    <option value="pink"> Pink </option> 
+                </select>
+                
+                <select class="expand_opt">
+                    <option value="0">By Brand</option>
+                    <option value="3">Adelyn Rae</option>
+                    <option value="4">Adrianna Papell</option>
+                    <option value="2">AG Jeans</option>
+                    <option value="1">AGOLDE</option>
+                    <option value="4">Allina Liu</option>
+                    <option value="2">Allison New York</option>
+                </select>
+                
+                <select class="expand_opt">
+                    <option value="0">By Size</option>
+                    <option value="1">XXS</option>
+                    <option value="2">XS</option>                        
+                    <option value="3">S</option>
+                    <option value="4">M</option>
+                    <option value="2">L</option>
+                </select>
+                <div class="expand_opt"><label>In Stock</label></div>
+                <div class="expand_opt"><label>Free Pickup</label></div>
+                
+                <h4 class="left_font">Reset all filters</h4>
+            </div>
+        </div>
+
+                <!-- 2nd div which contain two more div -(i))(Heading, Sorting) & (ii)(Product detail,button)  -->
+
+        <div id="main">
+
+                                                  <!-- For (i) -->
+            <div id="sort_heading">
+                <div id="cat_title">
+                   <div><h2>Women's Clothing</h2>
+                   <p></p></div>
+                </div>
+
+                <div id="sorting">
+                    <div>
+                        <p>Sort:</p>
+                    </div>
+                    <select id="sorting_opt">
+                        <option value="none">Featured</option>
+                        <option value="ascending">Price: Low to High</option>
+                        <option value="descending">Price: High to Low</option>
+                    </select>
+                    <div id="caruser">
+                        <button><</button>
+                        <h2>1/1</h2>
+                        <button>></button>
+                </div>
+                </div>              
+            </div>
+                                                  <!-- For (ii)  -->
+            <div id="product">
+
+
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
 <script>
-    let productData=[
+
+let productData=[
     {
     brand: "Sparky",
+    color:"blue",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzl7IX9xne0TjKA9DhVZyhl91W-zcO9zBJw&usqp=CAU",
     name: "Eylis brach Slip Dress",
     price: "480",
@@ -101,6 +430,7 @@
   },
     {
     brand: "Classic",
+    color:"blue",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbAmuYdAqY6ld_w2xR6FVhWZnfwZPn4X3dNA&usqp=CAU",
     name: "Halter Mini Dress",
     price: "950",
@@ -111,6 +441,7 @@
   },
     {
     brand: "Sparky",
+    color:"blue",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrbNaqFQ2sYx691wMwI6YwkCg7YVwpE0IL2g&usqp=CAU",
     name: "Sweta Maxi Dress",
     price: "1590",
@@ -121,6 +452,7 @@
   },
     {
     brand: "Classic",
+    color:"blue",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN4yvZpDm9EU7HsxeNlY9Aq1fUSqKoKUYMJA&usqp=CAU",
     name: "Aesome Party Dress",
     price: "1895",
@@ -131,6 +463,7 @@
   },
     {
     brand: "Puma",
+    color:"red",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJw9T6AaP91X4x19FRfYQrU2C4NkL72zecLw&usqp=CAU",
     name: "selena floral FileList",
     price: "2000",
@@ -141,6 +474,7 @@
   },
   {
     brand: "Gap",
+    color:"red",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMEMCmUuZXJssNZVcOtfVYhlWY47EQ60NUTg&usqp=CAU",
     name: "balck bella",
     price: "1347",
@@ -151,6 +485,7 @@
   },
   {
     brand: "Puma",
+    color:"red",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtMVTporI3avklfRNFa0iBXJ9q9WaCRtjZDA&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "799",
@@ -161,6 +496,7 @@
   },
   {
     brand: "Gap",
+    color:"white",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuF7qza2LPuUA3mu_FJ7qsO3qOHdRjjlUguw&usqp=CAU",
     name: "plus size womens",
     price: "2000",
@@ -171,6 +507,7 @@
   },
   {
     brand: "Bady Moo",
+    color:"white",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ23rlcTLnbnAc668zu7NwG26z7LlCJ4YEyEg&usqp=CAU",
     name: "balck bella",
     price: "1347",
@@ -181,6 +518,7 @@
   },
   {
     brand: "Pepe jeans",
+    color:"red",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgMOBrkMKbyIWGeB2GwIv7J-QMmPd-hEXxHg&usqp=CAU",
     name: "plus size womens",
     price: "979",
@@ -191,6 +529,7 @@
   },
   {
     brand: "Puma",
+    color:"green",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcaRbjzonY1TBgGt0-iEux0lYkc2Afum4ZsA&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "2000",
@@ -201,6 +540,7 @@
   },
   {
     brand: "Gap",
+    color:"green",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREa7zacBLpK6n0fLZYknjxtOp3vmHY-b4Orw&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "1347",
@@ -211,6 +551,7 @@
   },
   {
     brand: "Bady Moo",
+    color:"green",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj3_5d4Ae3jZDIs7OKr-gSrQBcAHmhjlrLig&usqp=CAU",
     name: "balck bella",
     price: "976",
@@ -221,6 +562,7 @@
   },
   {
     brand: "Gap",
+    color:"black",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jvbr0T4oV3SfxbOKxP9_KLs-vWkaEZsF8A&usqp=CAU",
     name: "woman cotton off white",
     price: "456",
@@ -231,6 +573,7 @@
   },
   {
     brand: "Bee bay",
+    color:"black",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_p_DFrMwkl-8z4kLEbtymZ9X8bHwxdw7oDw&usqp=CAU",
     name: "woman cotton off white",
     price: "986",
@@ -241,6 +584,7 @@
   },
   {
     brand: "Kaniroot",
+    color:"yellow",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS8v-e3TkCTdGfiBFya4RhCgLsNKZRyQSlug&usqp=CAU",
     name: "chill pill supersoft",
     price: "567",
@@ -251,6 +595,7 @@
   },
   {
     brand: "Bee bay",
+    color:"yellow",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA1frcMrqnv4yFcVqXE9Ltrt5rmLZmVjTW3A&usqp=CAU",
     name: "Curev multi-Color",
     price: "765",
@@ -261,6 +606,7 @@
   },
   {
     brand: "Gap",
+    color:"yellow",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl1Y_iC40lch5zTZgCzr_-hr2UhQOBXtH2ww&usqp=CAU",
     name: "Mega striple",
     price: "9999",
@@ -271,6 +617,7 @@
   },
   {
     brand: "Puma",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdS-JkeFeQ5vpxUfDgsQv-FzN4McGoGthSsA&usqp=CAU",
     name: "balck bella",
     price: "1347",
@@ -281,6 +628,7 @@
   },
   {
     brand: "Kaniroot",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn727OMJsaoownVAItfQIcbNA7VKrqvxzzxQ&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "799",
@@ -291,6 +639,7 @@
   },
   {
     brand: "Puma",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdf_nhJLqKOEsYkYXQQXGvkOvZp1un6X5Xqw&usqp=CAU",
     name: "plus size womens",
     price: "2000",
@@ -301,6 +650,7 @@
   },
   {
     brand: "Gap",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfqupNCxHL1vpiNqovvUpvwIlSZlbjODXTBg&usqp=CAU",
     name: "balck bella",
     price: "1347",
@@ -311,6 +661,7 @@
   },
   {
     brand: "Bee bay",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjN9twBi4rdTnd7HeRgqAe7fMDiMnYAwIAvw&usqp=CAU",
     name: "plus size womens",
     price: "979",
@@ -321,6 +672,7 @@
   },
   {
     brand: "Puma",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShxsQUwBbvUpk5F5L2k02vFuEPl3OB2qQTNw&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "2000",
@@ -331,6 +683,7 @@
   },
   {
     brand: "Puma",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIfKWsghJQs_4nYdN4suHSE2i5Nd33vHeDA&usqp=CAU",
     name: "chil pill supersoft palysuit",
     price: "1347",
@@ -341,6 +694,7 @@
   },
   {
     brand: "Gap",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM2-RBV3EEp8ZirVgYt217jOBbV3perQsgJA&usqp=CAU",
     name: "balck bella",
     price: "976",
@@ -351,6 +705,7 @@
   },
   {
     brand: "Puma",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDnfOg4s1yfnHY792GVy5nxUr5bctA911N2g&usqp=CAU",
     name: "woman cotton off white",
     price: "456",
@@ -361,6 +716,7 @@
   },
   {
     brand: "Gap",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyaeNp4Ow__ad-7c1PXQHiNiIlqz-A_xzYtQ&usqp=CAU",
     name: "woman cotton off white",
     price: "986",
@@ -371,6 +727,7 @@
   },
   {
     brand: "Kaniroot",
+    color:"pink",
     img2:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjpRjosqhlXyIibzPaDMwYBZdh3ApRBk6c5g&usqp=CAU",
     name: "chill pill supersoft",
     price: "567",
@@ -381,76 +738,172 @@
   },   
     ]
 
-    let cartLS=JSON.parse(localStorage.getItem("cartpage"))||[];
 
-    displayproduct(productData);
+let cartLS=JSON.parse(localStorage.getItem("cartpage"))||[];
+disp_prod(productData);
+let sorting_data = document.querySelector("#sorting_opt");
+sorting_data.addEventListener("change", sorting);
 
-    function displayproduct(productData){
-    document.querySelector("#container").innerHTML="";
-    productData.forEach(function(el){
-    let product=document.createElement("div");
-    let img=document.createElement("img");
-    img.src=el.img;
+function sorting() {
+let sortAs = document.querySelector("#sorting_opt").value;
 
-    img.addEventListener("mouseover",function(){
-    img.setAttribute("src", el.img2);
-    });
-    img.addEventListener("mouseout",function(){
-    img.setAttribute("src", el.img);
-    });
+if (sortAs == "ascending") {
+productArr.sort(function (a, b) {
+return a.price - b.price;
+ });
+disp_prod(productArr);
+}
+else if (sortAs == "descending") {
+productArr.sort(function (a, b) {
+return b.price - a.price;
+});
+disp_prod(productArr);
+}
+};
+                                                
+function disp_prod(productData){
+  document.querySelector("#product").innerHTML = "";
+  productData.forEach(function (elem){
+        let prod_count=productData.length;
+        document.querySelector("#cat_title>div>p").innerText=`${prod_count} products`;
+        let div = document.createElement("div");
+            
+        let img = document.createElement("img");
+        img.setAttribute("src", elem.img);
 
-    let name=document.createElement("h2");
-    name.innerText=el.name;
-    name.style.color="blue";
+        img.addEventListener("mouseover",function(){
+        img.setAttribute("src", elem.img2);
+        });
+        img.addEventListener("mouseout",function(){
+        img.setAttribute("src", elem.img);
+        });
 
-    let price=document.createElement("p");
-    price.innerText="RS - "+el.price;
-    price.style.color="red";
+        let name = document.createElement("p");
+        name.innerText = elem.name;
 
-    let addtocart=document.createElement("button");
-    addtocart.innerText="Add To Cart";
-    addtocart.style.backgroundColor="red";
+        let currency = document.createElement("span");
+        currency.innerText = "$";
 
-    addtocart.addEventListener("click",function(){
-      if(addcartfunction(el.productID)===true){
+        let price = document.createElement("span");
+        price.innerText = elem.price;
+
+        let br1 = document.createElement("br");
+
+        let color1 = document.createElement("button");
+        color1.setAttribute("id", "Fst_color");
+        color1.setAttribute("class", "color");
+
+        let color2 = document.createElement("button");
+        color2.setAttribute("id", "Snd_color");
+        color2.setAttribute("class", "color");
+
+        let color3 = document.createElement("button");
+        color3.setAttribute("id", "Trd_color");
+        color3.setAttribute("class", "color");
+
+        let div_col = document.createElement("div");
+        div_col.append(color1, color2, color3);
+
+      let button1 = document.createElement("button");
+      button1.innerText = "Buy Now";
+      button1.setAttribute("id", "buynow_btn");
+      button1.addEventListener("click", paymentpage);
+
+      let button2 = document.createElement("button");
+      button2.innerText = "Add to cart";
+      button2.setAttribute("id", "cart_btn");
+      button2.addEventListener("click",function(){
+        if(addcartfunction(elem.productID)===true){
         alert("Added Product Sucessfully");
-        cartLS.push(el);
+        cartLS.push(elem);
         localStorage.setItem("cartpage",JSON.stringify(cartLS));
-      }else{
+        }else{
         alert("Product Already Exists")
-      };
-    })
+        };
+      });        
+    let div_btn=document.createElement("div");
+    div_btn.setAttribute("id","purchase_btn")
+    div_btn.append(button1, button2);
+    document.querySelector("#product").append(div);
+    div.append(img, name, currency, price, br1, div_col, div_btn);
+  });
+};
+            
+    let expand=document.querySelectorAll(".expand_opt")
+    expand.forEach(function(elem){
+        elem.addEventListener("click",function(){
+            elem.classList.toggle("active");
+        });
+    });
 
-    let buynow=document.createElement("button");
-    buynow.innerText="Quick Shop";
-    buynow.style.backgroundColor="green";
-
-    buynow.addEventListener("click",paymentpage);
-
-
-    product.append(img,name,price,addtocart,buynow)
-    document.querySelector("#container").append(product);
-     });
-    } 
+  let filter=document.querySelectorAll(".expand_opt");
+  filter.forEach(function(elem){
+  elem.addEventListener("change",function(){
+  let selected=elem.value;                      
+  let filtered_arr=productData.filter(function(elem){
+  // For Price 
+  if(selected==1){
+    return elem.price<600;
+  }
+  else if(selected==2){
+    return (elem.price>600&&elem.price<=1000)
+  }
+  else if(selected==3){
+    return (elem.price>1000&&elem.price<=1500);
+  }
+  else if(selected==4){
+    return elem.price>2000;
+  }
+  // For Color 
+  else if(selected=="white"){
+    return elem.color=="white";
+  }
+  else if(selected=="blue"){
+    return elem.color=="blue";
+  }
+  else if(selected=="black"){
+   return elem.color=="black";
+  }
+  else if(selected=="green"){
+   return elem.color=="green";
+  }
+  else if(selected=="red"){
+  return elem.color=="red";
+  }
+  else if(selected=="yellow"){
+   return elem.color=="yellow";
+  }
+  else if(selected=="pink"){
+    return elem.color=="pink";
+  }
+  else{
+   return productData
+  }
+  })
+  disp_prod(filtered_arr)
+  });
+  });
     
-    function pricesort(){
-      let selected = document.querySelector("#pricechange").value;
-      if(selected=="Assending"){
-        productData.sort(function(a,b){
-          return (+a.price)-(+b.price);
-        });
-        
-        displayproduct(productData);
-      }
-      if(selected=="Desending"){
-        productData.sort(function(a,b){
-          return (+b.price)-(+a.price);
-        });
-        displayproduct(productData);
-      }
-    }
+  let reset=document.querySelector("#filter>h4");
+  reset.addEventListener("click",function(){
+    window.location.reload();
+  });
 
-    document.querySelector("#casual").addEventListener("click",function(){
+  function addcartfunction(id){
+    for(let i=0;i<cartLS.length;i++){
+    if(cartLS[i].productID==id){
+    return false;
+    }
+    }
+    return true;
+  }
+
+  function paymentpage(){
+    window.location.href="";
+    alert("redirect to payment page");
+  };
+
+  document.querySelector("#casual").addEventListener("click",function(){
       displaycasual();
     });
 
@@ -458,7 +911,7 @@
       let filtered=productData.filter(function(el){
         return el.catagory==="Casual";
       })
-      displayproduct(filtered);
+      disp_prod(filtered);
     }
 
 
@@ -470,7 +923,7 @@
       let filtered=productData.filter(function(el){
         return el.catagory==="party";
       })
-      displayproduct(filtered);
+      disp_prod(filtered);
     }
 
     document.querySelector("#sports").addEventListener("click",function(){
@@ -481,7 +934,7 @@
       let filtered=productData.filter(function(el){
         return el.catagory==="sports";
       })
-      displayproduct(filtered);
+      disp_prod(filtered);
     }
 
     document.querySelector("#festive").addEventListener("click",function(){
@@ -492,7 +945,7 @@
       let filtered=productData.filter(function(el){
         return el.catagory==="festive";
       })
-      displayproduct(filtered);
+      disp_prod(filtered);
     }
 
     document.querySelector("#formal").addEventListener("click",function(){
@@ -503,20 +956,6 @@
       let filtered=productData.filter(function(el){
         return el.catagory==="formal";
       })
-      displayproduct(filtered);
+      disp_prod(filtered);
     }
-
-    function addcartfunction(id){
-    for(let i=0;i<cartLS.length;i++){
-    if(cartLS[i].productID==id){
-    return false;
-    }
-    }
-    return true;
-    }
-
-    function paymentpage(){
-      window.location.href="";
-      alert("redirect to payment page");
-    };
 </script>

@@ -1,0 +1,383 @@
+@import url(“https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,300&display=swap”);
+
+body {
+  line-height: 1.5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ‘Poppins’, sans-serif;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+header {
+  width: 100%;
+  padding-left: 30px;
+  background-color: #fdfdf8;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  margin: auto;
+  display: block;
+  position: relative;
+}
+h4 {
+  font-weight: 400;
+  font-size: large;
+  color: gray;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header > ul > li {
+  display: inline-block;
+  line-height: 60px;
+  margin-left: 35px;
+  font-size: 17px;
+}
+a {
+  text-decoration: none;
+}
+
+header > ul > li a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000000;
+  position: relative;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+header > ul > li a:hover {
+  color: #ea4636;
+}
+header > ul > li:hover {
+  border-bottom: 2px solid #ea4636;
+}
+header > ul > li .submenu {
+  position: absolute;
+  width: 60%;
+  background-color: #fff;
+  box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  margin-top: 2px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+header > ul > li a {
+  color: gray;
+}
+header > ul > li > a {
+  color: #000000;
+}
+header > ul > li:hover .submenu {
+  visibility: visible;
+  opacity: 1;
+}
+.new-megamenu {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid blue; */
+  /* gap: 30px; */
+}
+.new-megamenu div {
+  width: 50%;
+  height: 100%;
+  line-height: 2;
+}
+.new-megamenu .newleft {
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid black; */
+  padding: 15px;
+  margin: 5px 0;
+}
+.new-megamenu .newsubleft {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  gap: 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+.new-megamenu .newright {
+  display: flex;
+  justify-content: space-between;
+  border-left: 1px solid rgb(152, 152, 152);
+  margin: 5px 0;
+  width: 70%;
+  gap: 20px;
+  padding-left: 15px;
+}
+.new-megamenu .newright > div:first-child {
+  padding-top: 15px;
+}
+.new-megamenu div > img {
+  width: 100%;
+}
+.image {
+  padding: 5px;
+  border-left: 1px solid rgb(152, 152, 152);
+  padding: 15px;
+}
+.dresses-megamenu {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 30px; */
+  line-height: 2;
+}
+
+.dresses-megamenu > .drleft {
+  width: 60%;
+  height: 100%;
+  padding: 15px;
+  padding-right: 25px;
+}
+.dresses-megamenu > .drleft > .sub-drleft {
+  display: flex;
+  justify-content: space-between;
+}
+.dresses-megamenu > .drleft > .sub-drleft > div:nth-child(2) {
+  width: 60%;
+  padding-left: 50px;
+}
+.dresses-megamenu > .drright {
+  border-left: 1px solid rgb(152, 152, 152);
+  width: 40%;
+  padding: 15px;
+  padding-left: 25px;
+}
+/* clothing start */
+header > ul > li .clothing-megamenu {
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 30px; */
+  line-height: 2;
+  text-transform: capitalize;
+}
+.clothing-megamenu > .clleft {
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+  /* padding-right: 25px; */
+  border-right: 1px solid rgb(152, 152, 152);
+}
+.clothing-megamenu > .clleft > .sub-clleft {
+  display: flex;
+  justify-content: space-between;
+}
+.clothing-megamenu > .clleft > .sub-clleft > div:nth-child(2) {
+  width: 50%;
+  padding-left: 40px;
+}
+.clothing-megamenu > div:nth-child(2) {
+  width: 20%;
+}
+.clothing-megamenu > div:nth-child(2),
+.clothing-megamenu > div:nth-child(3) {
+  padding: 20px;
+  border-right: 1px solid rgb(152, 152, 152);
+}
+.clothing-megamenu > div:nth-child(3) {
+  width: 20%;
+}
+.clothing-megamenu > div:nth-child(4) {
+  width: 20%;
+  padding: 20px;
+  padding-top: 35px;
+}
+.clothing-megamenu > div:nth-child(4) > img {
+  width: 100%;
+}
+header .clothing-megamenu hr {
+  margin-bottom: 10px;
+}
+/* clothing ends */
+/* shoes starts */
+header > ul > li .shoes-megamenu,
+header > ul > li .accessories-megamenu,
+header > ul > li .gifts-megamenu,
+header > ul > li .homes-megamenu,
+header > ul > li .beauty-megamenu,
+header > ul > li .wedding-megamenu,
+header > ul > li .sale-megamenu {
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 30px; */
+  line-height: 2;
+  text-transform: capitalize;
+}
+.shoes-megamenu > .shleft,
+.accessories-megamenu > .accleft,
+.beauty-megamenu > .beautyleft {
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+}
+.shoes-megamenu > .shleft > .sub-shleft,
+.accessories-megamenu > .accleft > .sub-accleft,
+.gifts-megamenu > .giftleft > .sub-giftleft,
+.homes-megamenu > .homesleft > .sub-homesleft,
+.beauty-megamenu > .beautyleft > .sub-beautyleft,
+.garden-megamenu > .gardenleft > .sub-gardenleft,
+.wedding-megamenu > .weddingleft > .sub-weddingleft,
+.sale-megamenu > .saleleft > .sub-saleleft {
+  display: flex;
+  justify-content: space-between;
+}
+.shoes-megamenu > .shleft > .sub-shleft > div:nth-child(2),
+.accessories-megamenu > .accleft > .sub-accleft > div:nth-child(2),
+.gifts-megamenu > .giftleft > .sub-giftleft > div:nth-child(2),
+.homes-megamenu > .homesleft > .sub-homesleft > div:nth-child(2),
+.beauty-megamenu > .beautyleft > .sub-beautyleft > div:nth-child(2),
+.garden-megamenu > .gardenleft > .sub-gardenleft > div:nth-child(2),
+.sale-megamenu > .saleleft > .sub-saleleft > div:nth-child(2) {
+  width: 50%;
+  padding-left: 40px;
+}
+.shoes-megamenu > div:nth-child(2),
+.accessories-megamenu > div:nth-child(2),
+.gifts-megamenu > div:nth-child(2),
+.gifts-megamenu > div:nth-child(3),
+.homes-megamenu > div:nth-child(2),
+.homes-megamenu > div:nth-child(3),
+.beauty-megamenu > div:nth-child(2) {
+  width: 20%;
+  border-left: 1px solid rgb(152, 152, 152);
+}
+.shoes-megamenu > div:nth-child(2),
+.shoes-megamenu > div:nth-child(3),
+.accessories-megamenu > div:nth-child(2),
+.accessories-megamenu > div:nth-child(3),
+.beauty-megamenu > div:nth-child(2),
+.beauty-megamenu > div:nth-child(3) {
+  padding: 20px;
+  border-right: 1px solid rgb(152, 152, 152);
+}
+.shoes-megamenu > div:nth-child(3),
+.accessories-megamenu > div:nth-child(3),
+.beauty-megamenu > div:nth-child(3) {
+  width: 20%;
+}
+
+.shoes-megamenu > div:nth-child(4) > img,
+.accessories-megamenu > div:nth-child(4) > img,
+.beauty-megamenu > div:nth-child(4) > img {
+  width: 100%;
+}
+.shoes-megamenu > div:nth-child(4),
+.accessories-megamenu > div:nth-child(4),
+.beauty-megamenu > div:nth-child(4) {
+  width: 20%;
+  padding: 20px;
+  padding-top: 35px;
+}
+header hr {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+header > ul > li .gifts-megamenu,
+header > ul > li .homes-megamenu {
+  width: 70%;
+}
+.gifts-megamenu > .giftleft,
+.homes-megamenu > .homesleft {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+.gifts-megamenu > div:nth-child(2),
+.homes-megamenu > div:nth-child(2) {
+  width: 25%;
+}
+.gifts-megamenu > div:nth-child(3),
+.homes-megamenu > div:nth-child(3) {
+  width: 25%;
+}
+.gifts-megamenu > div:nth-child(2),
+.gifts-megamenu > div:nth-child(3),
+.homes-megamenu > div:nth-child(2),
+.homes-megamenu > div:nth-child(3) {
+  padding: 20px;
+}
+header > ul > li .garden-megamenu {
+  width: 40%;
+  line-height: 2;
+  padding: 20px;
+  text-transform: capitalize;
+}
+.garden-megamenu > .garden.left {
+  width: 100%;
+}
+
+header > ul > li .wedding-megamenu,
+header > ul > li .sale-megamenu {
+  width: 50%;
+  line-height: 2;
+
+  text-transform: capitalize;
+}
+.wedding-megamenu > div:nth-child(2),
+.sale-megamenu > div:nth-child(2) {
+  width: 30%;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.wedding-megamenu > .weddingleft,
+.sale-megamenu > .saleleft {
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  border-right: 1px solid rgb(152, 152, 152);
+}
+.sale-megamenu > div:nth-child(2) {
+  width: 40%;
+  padding-top: 20px;
+}
+.wedding-megamenu > div:nth-child(2) > img {
+  width: 100%;
+}
+/* header > ul > li .sale-megamenu {
+  visibility: visible;
+  opacity: 1;
+} */
+/* position of submenu start */
+header > ul > li.clothing > .submenu,
+header > ul > li.shoes > .submenu,
+header > ul > li.accessories > .submenu,
+header > ul > li.beauty > .submenu {
+  left: 3.5%;
+}
+header > ul > li.gifts > .submenu {
+  left: 45%;
+  transform: translateX(-50%);
+}
+header > ul > li.garden > .submenu {
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+header > ul > li.homes > .submenu {
+  left: 50%;
+  transform: translateX(-50%);
+}
+header > ul > li.wedding > .submenu,
+header > ul > li.sale > .submenu {
+  right: 3.5%;
+  /* transform: translateX(-50%); */
+}
+
+header > ul > li.new > .submenu {
+  left: 62%;
+  transform: translateX(-50%);
+}
+/* position of submenu end */

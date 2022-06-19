@@ -1,0 +1,243 @@
+                                    /* CSS File For cart page  */
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            @import url(“https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,300&display=swap”);
+        }
+
+        #parent {
+            /* border: 1px solid red; */
+            width: 91%;
+            display: flex;
+            margin: auto;
+            justify-content: space-between;
+
+
+        }
+
+        #product_details {
+            /* border: 1px solid blue; */
+            width: 65%;
+            font-family: ‘Poppins’, sans-serif;
+            ;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgb(212, 212, 212);
+        }
+
+        #table>thead>tr>th {
+            border-bottom: 1px solid rgb(212, 212, 212);
+            /* margin-bottom: 20px; */
+        }
+
+        #table>tbody>tr>td {
+            border-bottom: 1px solid rgb(212, 212, 212);
+            /* margin-bottom: 20px; */
+        }
+
+        #table>tbody>tr {
+            margin: 20px;
+        }
+
+        #order_details>div>div>img {
+            width: 150px;
+            height: 15px;
+            /* margin: 5px;      */
+        }
+
+        #order_details>div>div>button {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            border-radius: 50%;
+            border-color: rgb(10, 128, 224);
+            color: rgb(10, 128, 224);
+            background-color: transparent;
+        }
+
+        #order_details>div>div>button:hover {
+            border-color: black;
+            color: black;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            /* text-align: center; */
+        }
+
+        #item {
+            text-align: left;
+        }
+
+        tr>td:nth-child(1) {
+            width: 165px
+        }
+
+        tr>td:nth-child(2) {
+            padding-bottom: 8%;
+        }
+
+        tr>td:nth-child(3) {
+            padding-bottom: 15%;
+        }
+
+        tr>td:nth-child(5)>div {
+            margin-bottom: 67%;
+        }
+
+        td>img {
+            width: 150px;
+            margin-left: 0px;
+        }
+
+        .col3 {
+            text-align: center;
+        }
+
+        #order_summary {
+            width: 27%;
+        }
+
+        #order_details {
+            border: 1px solid rgb(212, 212, 212);
+            width: 100%;
+            height: 405px;
+            /* padding: 0 20px; */
+            /* text-align: center; */
+
+        }
+
+        #price_details {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        #price_details>div>div {
+            margin-top: 10px;
+
+        }
+
+        #span {
+            margin-left: 8%;
+        }
+
+        .quantity_btn {
+            width: 40%;
+            height: 45px;
+            margin-bottom: 100%;
+        }
+
+        #btn {
+            background-color: #4b5666;
+            width: 95%;
+            height: 60px;
+            margin-top: 17px;
+            padding-top: 18px;
+            padding-left: 60px;
+        }
+
+        #btn>a {
+            margin-bottom: -20px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        #btn:hover {
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+        }
+
+        #btn>a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        #paypal {
+            border: 1px solid black;
+            border-radius: 6px;
+            margin-top: 15px;
+            width: 95%;
+            height: 60px;
+            padding-left: 55px;
+            padding-top: 15px;
+
+        }
+
+        #paypal>img {
+            width: 45%;
+            height: 70%;
+            margin-left: 50px;
+        }
+
+        #paypal:hover {
+            cursor: pointer;
+        }
+
+        #promo {
+            width: 90%;
+            height: 65px;
+            margin-top: 60px;
+            border: none;
+        }
+
+        #promo:hover {
+            color: rgb(68, 181, 247);
+        }
+
+        a {
+            color: rgb(61, 123, 158);
+        }
+
+        @media all and (max-width: 1200px) {
+            #parent {
+                border: 1px solid red;
+                width: auto;
+                display: grid;
+                margin: auto;
+                justify-content: center;
+            }
+
+            #btn {
+                padding-left: 30px;
+            }
+
+            #btn>a {
+                font-size: 10px;
+            }
+
+            #paypal>img {
+                margin-left: 20px;
+            }
+
+            .heading {
+                /* width: min-content; */
+                padding-top: 25px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgb(212, 212, 212);
+            }
+
+            #product_details {
+                width: 100%;
+                margin: auto;
+            }
+
+            #order_summary {
+                width: 70%;
+                margin: auto;
+            }
+        }
+        tr>td:nth-child(2)>p{
+            margin-bottom: 10px;
+        }

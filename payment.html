@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="Home_style.css" />
+  <!-- <link rel="stylesheet" href="Header_style.css" /> -->
+  <!-- <link rel="stylesheet" href="navbar_style.css" /> -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        margin: 0%;
+        padding: 0%;
+      }
+      #nav {
+        height: 60px;
+        width: 100%;
+        padding: 0% 10%;
+        padding: 0% 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: sticky;
+        top: 0px;
+        background-color: white;
+      }
+      #nav > div:first-child {
+        display: flex;
+        width: 25%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #nav > div > div {
+        height: 25px;
+        border: 1px solid lightgray;
+      }
+      #nav > div:first-child > img {
+        width: 45%;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      #box {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      a,
+      h3 {
+        text-decoration: none;
+        color: lightgray;
+      }
+      #nav + h3 {
+        width: 80%;
+        margin: 40px auto;
+      }
+      #sum {
+        width: 27%;
+        height: 500px;
+      }
+      #sum > div {
+        padding: 0 10%;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+          rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        height: 350px;
+        /* border: 1px solid blue; */
+      }
+      #sum > div > div {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        margin: -15px 0px;
+      }
+      button {
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+        border: transparent;
+        letter-spacing: 1px;
+        color: white;
+        /* font-weight: bold; */
+        background-color: #4b5666;
+        margin: 30px auto;
+        cursor: pointer;
+      }
+      button + div {
+        border: 1px solid lightgray;
+      }
+      #sum > div > div:nth-child(7) {
+        margin: 10px auto;
+      }
+      #code {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      h3 + h3 {
+        color: black;
+        margin-left: 10%;
+        font-weight: 500;
+      }
+      #box h3 {
+        color: #000;
+        margin-left: 6px;
+        font-weight: 500;
+      }
+      #code > button {
+        border: 1px solid gray;
+        background-color: #fff;
+        color: gray;
+        width: 30%;
+        margin-top: 0%;
+      }
+      #code > input {
+        margin-top: 0%;
+        width: 65%;
+      }
+      #sum > div > div:nth-child(7):hover {
+        color: teal;
+      }
+      #code > button:hover {
+        background-color: #4b5666;
+        color: white;
+        cursor: pointer;
+      }
+      #main {
+        width: 70%;
+        height: 400px;
+        border: 1px solid;
+        padding: 0% 3%;
+      }
+      .logo {
+        width: 50px;
+        height: 25px;
+      }
+      h5 {
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      #add > p {
+        margin: 3px auto;
+        font-size: 15px;
+      }
+      #nums {
+        width: 30%;
+        height: 80px;
+      }
+      #exp {
+        width: 20%;
+        height: 80px;
+      }
+      #cvv {
+        width: 20%;
+        height: 80px;
+      }
+      form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      label {
+        font-size: 15px;
+      }
+      .inp {
+        width: 100%;
+        height: 40px;
+      }
+      input,
+      select {
+        height: 45px;
+        width: 45%;
+        font-size: 16px;
+        margin: 10px 15px 30px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <div>
+        <img
+          src="https://images.ctfassets.net/5de70he6op10/53ZOE4rRqrxcvv0hg2eSLV/a849085e5f600c618132be2475017746/anthro-logo.svg"
+          alt=""
+        />
+        <div></div>
+        <img
+          src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg"
+          alt=""
+        />
+      </div>
+      <div>
+        <a href="cart.html"><img
+          class="icon"
+          src="https://cdn-icons-png.flaticon.com/128/3916/3916639.png"
+          alt=""
+        /></a>
+      </div>
+    </div>
+    <h3>
+      <a href="shipping.html">Shipping</a> /
+      <a href="">payment</a>
+    </h3>
+    <h3>Payment Method</h3>
+    <div id="box">
+      <div id="main">
+        <div id="cred">
+          <h3>Credit Card</h3>
+          <div>
+            <img
+              src="https://www.anthropologie.com/static/v3/images/mastercard-200dd7d92e446ace024f5b7a56fc3dbb.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/visa-5e035e7c50d0de866fbb16e5ac80293d.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/american-express-d1f00c36ef5c0d39793f98f685b4c130.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/discover-85248a7a74c3ffd34011d6e3bacae886.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/jcb-366a23ec5606ddc0773d2a522713d487.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/cup-844be65defd53cd3a53319e88255a3a1.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/diners-club-3bfd7869205a25218c3dc5b56b008380.svg"
+              alt=""
+              class="logo"
+            />
+            <img
+              src="https://www.anthropologie.com/static/v3/images/maestro-d8ba8fd50606b932d7baf4665404da59.svg"
+              alt=""
+              class="logo"
+            />
+          </div>
+          <form>
+            <div id="nums">
+              <label>CARD NUMBER*</label><br />
+              <input type="number" name="" class="inp" />
+            </div>
+
+            <div id="exp">
+              <label>Expiration Date*</label><br />
+              <input type="month" name="" class="inp" />
+            </div>
+
+            <div id="cvv">
+              <label>CVV*</label><br />
+              <input type="number" name="" min="100" max="999" class="inp" />
+            </div>
+          </form>
+        </div>
+        <div id="add">
+          <h5>Billing Address</h5>
+        </div>
+      </div>
+      <div id="sum">
+        <h3>Order Summary</h3>
+        <div>
+          <div>
+            <p>Subtotal</p>
+            <p id="sub"></p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p id="ship">$60.00</p>
+          </div>
+          <div>
+            <p>Estimated Tax</p>
+            <p>$0.00</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p id="total"></p>
+          </div>
+          <button id="advance">PLACE YOUR ORDER</button>
+          <div></div>
+          <div id="promo">
+            <p>Promo Code</p>
+            <p>+</p>
+          </div>
+          <div id="code">
+            <input type="text" name="" id="disc" />
+            <button id="applied">APPLY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="section1">
+        <div class="email">
+          <div>
+            <p>Sign Up for Email</p>
+            <p>
+              Receive early access to new arrivals, sales, exclusive content,
+              events and much more!
+            </p>
+          </div>
+          <div>
+            <form action="">
+              <p>Email Address*</p>
+              <input type="text" id="email" />
+              <input type="submit" name="submit" id="submit" />
+            </form>
+          </div>
+        </div>
+        <div>
+          <p>
+            By signing up, you will receive Anthropologie offers, promotions and
+            other commercial messages. You are also agreeing to Anthropologie’s
+            <a href="#">Privacy Policy</a>. You may unsubscribe at any time.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="fcontainer">
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Track Your Order</a></li>
+            <li><a href="#">Start A Return Or Exchange (US)</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">Current Promotions</a></li>
+            <li><a href="#">Product Recalls</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">A Greater Good</a></li>
+            <li><a href="#">Diversity & Inclusion</a></li>
+            <li><a href="#">Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">AnthroPerks</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Trade Membership</a></li>
+            <li><a href="#">Furniture: Guides & Services</a></li>
+            <li><a href="#">Store Pickup & Collection Points</a></li>
+            <li><a href="#">Klarna</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Stay Connected</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Styling Services</a></li>
+            <li><a href="#">Request A Catalog</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-location-dot"></i> Store Locator</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-envelope"></i> Get Email</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="icons">
+        <div>
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/4gWq1G4qLLgmqlNeHfzV2T/55298745127c36c5876f4013434c0c37/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917_Copy_2.svg"
+            alt=""
+          />
+        </div>
+        <div>
+          <i class="fa-brands fa-pinterest"></i>
+        </div>
+        <div>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+        <div>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+      <div class="lstimg">
+        <img
+          src="https://images.ctfassets.net/5de70he6op10/2Lh06CXT4AzVnj4LxvGsQD/a424e10a3b8c9e2e270dc22505bfbfa6/022421_SiteFooter_SMS_SIgnUp.jpg"
+          alt=""
+        />
+      </div>
+      <div class="countries">
+        <div>
+          <a href="#">US</a>
+        </div>
+        <div>
+          <a href="#">France</a>
+        </div>
+        <div>
+          <a href="#">germany</a>
+        </div>
+        <div>
+          <a href="#">italy</a>
+        </div>
+        <div>
+          <a href="#">spain</a>
+        </div>
+        <div>
+          <a href="#">UK</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="leftcopy">
+          <div>
+            <a href="#">Privacy policy</a>
+          </div>
+          <div>
+            <a href="#">Terms of use</a>
+          </div>
+          <div>
+            <a href="#">CA transparancy</a>
+          </div>
+          <div>
+            <a href="#">Accessability</a>
+          </div>
+          <div>
+            <a href="#">URBN.com</a>
+          </div>
+          <div>
+            <a href="#">For CA residents</a>
+          </div>
+        </div>
+        <div class="rightcopy"><p>2022 URBN.com. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  let price = localStorage.getItem("price") || 200;
+  document.querySelector("#sub").append("$" + price);
+
+  let disc = document.querySelector("#applied");
+  disc.addEventListener("click", discount);
+
+  let total = localStorage.getItem("total") || price + 60;
+  document.querySelector("#total").append("$" + total);
+  let flag1 = localStorage.getItem("flag");
+  function discount() {
+    let promo = document.querySelector("#disc").value;
+    console.log(promo);
+    if (promo == "SUB20") {
+      total = 0;
+      document.querySelector("#total").innerText = "";
+      flag1 = true;
+      disc.removeEventListener("click", discount);
+      price -= ((price / 100) * 20).toFixed(2);
+      document.querySelector("#sub").innerText = "$" + price;
+      total = price + 60;
+      localStorage.setItem("total", total);
+      document.querySelector("#total").append("$" + total);
+    }
+
+    if (promo == "TOTAL20") {
+      flag1 = true;
+      disc.removeEventListener("click", discount);
+      document.querySelector("#total").innerText = "";
+      total -= ((total / 100) * 20).toFixed(2);
+      localStorage.setItem("total", total);
+      document.querySelector("#total").innerText = "$" + total;
+    }
+
+    if (promo == "MASAI50") {
+      flag1 = true;
+      disc.removeEventListener("click", discount);
+      document.querySelector("#total").innerText = "";
+      total -= ((total / 100) * 50).toFixed(2);
+      localStorage.setItem("total", total);
+      document.querySelector("#total").innerText = "$" + total;
+    }
+    localStorage.setItem("flag", flag1);
+  }
+  let address = JSON.parse(localStorage.getItem("address"));
+
+  let name = document.createElement("p");
+  name.append(address.firstname + " " + address.lastname);
+  let add1 = document.createElement("p");
+  add1.append(address.add1);
+  let add2 = document.createElement("p");
+  add2.append(address.add2);
+  let add3 = document.createElement("p");
+  add3.append(address.city + ", " + address.reg + ", " + address.code);
+  let country = document.createElement("p");
+  country.append(address.country);
+  let phone = document.createElement("p");
+  phone.append(address.phone);
+
+  let add = document.querySelector("#add");
+  add.append(name, add1, add2, add3, country, phone);
+
+  document.querySelector("#advance").addEventListener("click", pay);
+
+  let carNumber = document.querySelector("#nums>input");
+  let exp = document.querySelector("#exp>input");
+  let cvv = document.querySelector("#cvv>input");
+
+  function pay() {
+    console.log(typeof exp.value)
+    if (
+      carNumber.value == 1234123412341234 &&
+      exp.value == '2030-01' &&
+      cvv.value == 123
+    ) {
+      window.location.href = "homePage.html";
+      alert("Payment Successful!... Your order is Placed");
+    } else if (
+      carNumber.value == 1111111111111111 &&
+      exp.value == '2030-01' &&
+      cvv.value == 111
+    ) {
+      window.location.href = "homePage.html";
+      alert("Payment Successful!... Your order is Placed");
+    } else if (
+      carNumber.value == 2222222222222222 &&
+      exp.value == '2030-01' &&
+      cvv.value == 222
+    ) {
+      window.location.href = "homePage.html";
+      alert("Payment Successful!... Your order is Placed");
+    } else {
+      alert("Invalid Info!... Please check again");
+    }
+  }
+</script>

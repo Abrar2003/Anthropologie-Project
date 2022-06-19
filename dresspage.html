@@ -739,7 +739,7 @@ let productData=[
     ]
 
 
-let cartLS=JSON.parse(localStorage.getItem("cartpage"))||[];
+let cartLS=JSON.parse(localStorage.getItem("cart"))||[];
 disp_prod(productData);
 let sorting_data = document.querySelector("#sorting_opt");
 sorting_data.addEventListener("change", sorting);
@@ -816,7 +816,7 @@ function disp_prod(productData){
         if(addcartfunction(elem.productID)===true){
         alert("Added Product Sucessfully");
         cartLS.push(elem);
-        localStorage.setItem("cartpage",JSON.stringify(cartLS));
+        localStorage.setItem("cart",JSON.stringify(cartLS));
         }else{
         alert("Product Already Exists")
         };

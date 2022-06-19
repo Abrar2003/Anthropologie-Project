@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes</title>
+    <style>
+
+@import url(“https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,300&display=swap”);
+        *{
+            font-family: ‘Poppins’, sans-serif;
+        }
+                                                 /* whole content in a single parent div  */
+        #parent {
+            width: 95%;
+            margin: auto;
+            display: flex;
+        }
+
+                                                  /* 1st child div for left filter option  */
+        #left {
+            width: 15%;
+        }
+
+        #left>p {
+            border-bottom: 1px solid rgb(222, 222, 222);
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .left_font>div>a {
+            color: #26262c;
+            text-decoration: none;
+            font-family: "Avenir Book", sans-serif;
+            line-height: 25px;
+            font-size: 12px;
+        }
+
+        #option>div {
+            margin-bottom: 12px;
+        }
+        #option>div:nth-child(1)>a{
+            color: #47afe0;
+            border-bottom: 1px solid #47afe0;
+            
+        }
+
+        #option>div:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+                                                       /* For filtering content  */
+
+        #filter>h4 {
+            font-size: 18px;
+            color: gray;
+        }
+
+        #filter>h4:hover{
+            color: rgb(85, 82, 82);
+        }
+        #filter_heading {
+            border-bottom: 1px solid rgb(222, 222, 222);
+            margin: 40px auto 0px auto;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #filter>div {
+            padding: 20px 0;
+            border-bottom: 1px solid rgb(222, 222, 222);
+        }
+
+        .expand_opt {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .expand_opt:hover {
+            color: rgb(102, 168, 180);
+        }
+        .expand_opt::after{
+            content: "\002B";
+            font-weight: 600;
+            /* color: gray; */    
+        }
+        .expand_opt.active::after{
+            content: "\2212";
+        }
+        #filter>div~div:hover{
+            color: rgb(102, 168, 180);
+        } 
+        .expand_opt{
+            width: 100%;
+            margin: 10px;
+        }
+        .left_font:hover{
+            cursor: pointer;
+        }
+       
+
+                                              /* another 2nd div for sorting product display  */
+        #main {
+            width: 80%;
+            margin: auto;
+        }
+
+        #sort_heading {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        #sorting {
+            display: flex;
+            align-items:center;
+            height: 80px;
+        }
+
+        select {
+            height: 35px;
+            border-radius: 5px;
+            padding: 3px;
+            margin-right: 20px;
+            width: 120px;
+           
+        }
+
+        #sorting>div {
+            margin-top: 5px;
+            margin-right: 10px;
+            font-weight: 200;
+        }
+        #caruser{
+            display: flex;
+        }
+        
+        #caruser>h2{
+            margin-top: 13px;
+            color: gray;
+            font-weight: 100;
+            font-size: 17px;
+        }
+        #caruser>button:first-child{
+            color: rgb(192, 189, 189);
+        }
+        #caruser>button{
+            font-size: 40px;
+            background-color: transparent;
+            border: none;
+            color: rgb(107, 103, 103);
+            margin-bottom: 10px;
+            
+        }
+        #caruser>button:hover{
+            cursor: pointer;
+        }
+        select:hover{
+            cursor: pointer;
+        }
+
+        #cat_title>div{
+            font-family: "" Avenir Medium", sans-serif;";
+            color: #3c3c3f;
+            display: flex;
+            width: 290px;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+                                     /* For product data like image, name, price, color & add to cart button  */
+        #product {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        #product>div>p {
+            font-family: "Avenir Medium", sans-serif;
+            font-size: 13px;
+            color: #26262c;
+            margin: 10px auto 10px auto;
+            margin: auto;
+        }
+
+        #product>div>img {
+            width: 100%;
+        }
+
+        #product>div>img+p:hover {
+            color: rgb(102, 168, 180);
+            cursor: pointer;
+        }
+
+        #product>div>img:hover {
+            cursor: pointer;
+        }
+
+        #product>div>div {
+            display: flex;
+            align-items: center;
+        }
+
+        #Fst_color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #47afe0;
+            margin: 5px;
+        }
+
+        #Snd_color {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #e04847;
+            margin: 5px;
+        }
+
+        #Trd_color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #a7b6c5;
+            margin: 5px;
+        }
+
+        .color:hover {
+            border: 1px solid #6eacc9;
+            cursor: pointer;
+        }
+
+        #purchase_btn{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        #buynow_btn{
+            border: none;
+            height: 30px;
+            width: 80px;
+            border-radius: 3px;
+            background-color: rgba(231, 45, 45, 0.801);
+            color: white;
+            font-weight: 600;
+        }
+        #cart_btn {
+            border: none;
+            height: 30px;
+            font-size: 15px;
+            font-weight: 530;
+            border-radius: 6px;
+            background-color:#4b5666;
+            color: white;
+        }
+
+        #buynow_btn:hover{
+            background-color: rgb(243, 18, 18);
+            color: white;
+            cursor: pointer;
+        }
+
+        #cart_btn:hover {
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+    
+        @media only screen and (max-width:980px){
+            #product{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        #filters{
+          display: flex;
+          justify-content: space-around;
+          cursor: pointer;
+        }
+        #filters>div{
+          width: 15%;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #7289b6;
+          font-size: 20px;
+          color: white;
+        }
+        #filters>div:hover{
+          background-color: rgb(147, 85, 206);
+        }
+         
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="filters">
+        <div id="casual">5-5.5</div>
+        <div id="party">6-6.5</div>
+        <div id="sports">7-7.5</div>
+        <div id="festive">8-8.5</div>
+        <div id="formal">9-9.5</div>
+        <div id="formal">10-11</div>
+      </div>
+    <div id="parent">
+        <div id="left">
+            <p class="option_heading">Browse by:</p>
+            <div id="option" class="left_font">
+                <div><a href="">Clothing</a></div>
+                <div><a href="">New!</a></div>
+                <div><a href="">Top-Rated</a></div>
+                <div><a href="">Activewear</a></div>
+                <div><a href="">Dresses</a></div>
+                <div><a href="">Getaway & Resort Wear</a></div>
+                <div><a href="">Intimates& Lingerie</a></div>
+                <div><a href="">Jackets</a></div>
+                <div><a href="">Jeans</a></div>
+                <div><a href="">Jumpsuits</a></div>
+                <div><a href="">Kimonos</a></div>
+                <div><a href="">Lougewear</a></div>
+                <div><a href="">pants</a></div>
+                <div><a href="">Petites</a></div>
+                <div><a href="">Plus</a></div>
+                <div><a href="">Sets</a></div>
+                <div><a href="">Shorts</a></div>
+                <div><a href="">Skirts</a></div>
+                <div><a href="">Sleepwear</a></div>
+                <div><a href="">Sweaters</a></div>
+                <div><a href="">Swimwear</a></div>
+                <div><a href="">Tops & Tees</a></div>
+            </div>
+            <p id="filter_heading">Filter by:</p>
+            <div id="filter" , class="left_font">
+                <select id="price_opt"class="expand_opt">
+                    <option value="0">By Price</option>
+                    <option value="1">Less than $25</option>
+                    <option value="2">$25 - $50</opion>
+                    <option value="3">$50 - $100</option>
+                    <option value="4">More than $100</option>
+                    </select>
+
+                <select id=""class="expand_opt">
+                    <option value="0"> By Color </option>
+                    <option value="white"> White </option>
+                    <option value="blue"> Blue </option> 
+                    <option value="black"> Black </option>
+                    <option value="green"> Green </option> 
+                    <option value="brown"> Brown </option>
+                    <option value="yellow"> Yellow </option> 
+                    <option value="pink"> Pink </option> 
+                </select>
+                
+                <select class="expand_opt">
+                    <option value="0">By Brand</option>
+                    <option value="3">Adidas</option>
+                    <option value="4">All Black</option>
+                    <option value="2">Alhos</option>
+                    <option value="1">Amanu</option>
+                    <option value="4">Angle Alarcon</option>
+                    <option value="2">APL</option>
+                </select>
+                
+                <select class="expand_opt">
+                    <option value="0">By Size</option>
+                    <option value="1">5-5.5</option>
+                    <option value="2">6-6.5</option>                        
+                    <option value="3">7-7.5</option>
+                    <option value="4">8-8.5</option>
+                    <option value="2">9-9.5</option>
+                    <option value="2">10-11</option>
+                </select>
+                <div class="expand_opt"><label>In Stock</label></div>
+                <div class="expand_opt"><label>Free Pickup</label></div>
+                
+                <h4 class="left_font">Reset all filters</h4>
+            </div>
+        </div>
+        <div id="main">
+            <div id="sort_heading">
+                <div id="cat_title">
+                   <div><h2>Women's Shoes</h2>
+                   <p></p></div>
+                </div>
+                <div id="sorting">
+                    <div>
+                        <p>Sort:</p>
+                    </div>
+                    <select id="sorting_opt">
+                        <option value="none">Featured</option>
+                        <option value="ascending">Price: Low to High</option>
+                        <option value="descending">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                        <option value="bestselling">Bestselling</option>
+                    </select>
+                    <div id="caruser">
+                        <button><</button>
+                        <h2>1/1</h2>
+                        <button>></button>
+                </div>
+                </div>        
+                
+            </div>
+            <div id="product">
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+                                                  // Array of object manually created 
+
+                                                  let productData=[
+    {
+    brand: "Sparky",
+    name: "Edelman Kia Heels",
+    price: "140.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women31",
+    catagory: "Party",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/63531255_007_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/63531255_007_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Classic",
+    name: "Sport Sandals",
+    price: "125.00",
+    size: "6,6.5,7,7.5,8,8.5",
+    productID: "women32",
+    catagory: "Party",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/60058286_020_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/60058286_020_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+  },
+    {
+    brand: "Sparky",
+    name: "Seychelles Woven Flats",
+    price: "99.00",
+    sizes: "6.5,7,7.5,8",
+    productID: "women33",
+    catagory: "NightDress",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/60385945_009_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/60385945_009_b3?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Classic",
+    name: "Pilcro Twisted Slides",
+    price: "130.00",
+    size: "7,7.5,8",
+    productID: "women34",
+    catagory: "Sports",
+    color: "black",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/65368508_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/65368508_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+    {
+    brand: "Puma",
+    name: "Guilhermina Square-Toe",
+    price: "120.00",
+    size: "6,6.5,7",
+    productID: "women1",
+    catagory: "Casual",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/64998826_012_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/64998826_012_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Guilhermina Pointed-Toe",
+    price: "140.00",
+    size: "6,6.5,7,7.5,8,8.8,9,9.5",
+    productID: "women2",
+    catagory: "festive",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/68829134_024_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
+    image: "https://images.urbndata.com/is/image/Anthropologie/68829134_024_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Brooklyn Lens Loafers",
+    price: "130",
+    size: "7,7.5,8,8.8,9,9.5",
+    productID: "women3",
+    catagory: "party",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/63060966_016_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/63060966_016_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Angel Alarcon Square-Toe",
+    price: "150.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women4",
+    catagory: "formal",
+    color: "yellow",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/68947142_071_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/68947142_071_b?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bady Moo",
+    name: "Angel Strappy Heels",
+    price: "150.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women5",
+    catagory: "workout",
+    color: "pink",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67426239_066_b16?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67426239_066_b15?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
+  },
+  {
+    brand: "Pepe jeans",
+    name: "CAVERLEY Mazie Heels",
+    price: "185.00",
+    size: "6,6.5,7",
+    productID: "women6",
+    catagory: "travel",
+    color: "pink",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/68774272_085_b4?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+    image: "https://images.urbndata.com/is/image/Anthropologie/68774272_085_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
+  },
+  {
+    brand: "Puma",
+    name: "Vicenza Metallic Mules",
+    price: "160.00",
+    size: "6,6.5,8,8.8,9",
+    productID: "women7",
+    catagory: "sports",
+    color: "pink",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/68542190_066_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/68542190_066_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Bibi Lou Aoi Heels",
+    price: "180.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women8",
+    catagory: "Casual",
+    color: "pink",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/66297565_068_b3?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+    image: "https://images.urbndata.com/is/image/Anthropologie/66297565_068_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
+  },
+  {
+    brand: "Bady Moo",
+    name: "Laidback London Diani Sandals",
+    price: "68.60",
+    size: "6,6.5,7,7.5,8",
+    productID: "women9",
+    catagory: "festive",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67128207_015_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67128207_015_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Melissa Degradee Flats",
+    price: "48.30",
+    size: "6,6.5,7,7.5,8,8.5",
+    productID: "women10",
+    catagory: "party",
+    color: "blue",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67105452_059_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67105452_059_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+  },
+  {
+    brand: "Bee bay",
+    name: "Nisolo Mara Woven Loafers",
+    price: "180.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women11",
+    catagory: "formal",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67192310_011_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67192310_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Kaniroot",
+    name: "Woven Tie-Up Sandals",
+    price: "112.00",
+    size: "7,7.5,8",
+    productID: "women12",
+    catagory: "workout",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67665521_015_b15?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67665521_015_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bee bay",
+    name: "Tie-Up Thong Sandals",
+    price: "77.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women13",
+    catagory: "travel",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67454595_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67454595_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Transparent Zebra Sandals",
+    price: "98.00",
+    size: "6,6.5,7,7.5,8,9,9.5,10,11",
+    productID: "women14",
+    catagory: "sports",
+    color: "green",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67563486_034_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67563486_034_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Slide Sandalsbalck bella",
+    price: "100.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women15",
+    catagory: "Casual",
+    color: "black",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/69827319_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/69827319_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Kaniroot",
+    name: "Pilcro Tie-Up Sport Sandals",
+    price: "105.00",
+    size: "6,6.5,8,10,11",
+    productID: "women16",
+    catagory: "festive",
+    color: "black",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67608067_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67608067_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Laidback London Sandals",
+    price: "80.50",
+    size: "6,6.5,7,7.5,8",
+    productID: "women17",
+    catagory: "party",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67127993_018_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67127993_018_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "Fringed Rope Sandals",
+    price: "84.00",
+    size: "6,6.5,7,7.5,9",
+    productID: "women18",
+    catagory: "formal",
+    color: "black",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67060301_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67060301_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Bee bay",
+    name: "Pilcro Tie-Up Sandals",
+    price: "70.00",
+    size: "6,6.5,7,7.5,",
+    productID: "women19",
+    catagory: "workout",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67059949_025_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67059949_025_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Dolce Vita Elly Heels",
+    price: "150.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women20",
+    catagory: "travel",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/69422574_012_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/69422574_012_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Matisse Scorpio Ballet Flats",
+    price: "125.00",
+    size: "6,6.5,7,7.5,8,9.5,10,11",
+    productID: "women21",
+    catagory: "sport",
+    color: "brown",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/68807197_026_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/68807197_026_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Gap",
+    name: "balck bella",
+    price: "126.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women22",
+    catagory: "Casual",
+    color: "black",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67425850_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67425850_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Puma",
+    name: "Birkenstock Arizona Sandals",
+    price: "50.00",
+    size: "6,6.5,7,7.5,8,9",
+    productID: "women23",
+    catagory: "festive",
+    color: "pink",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/66436783_085_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/66436783_085_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+  },
+  {
+    brand: "Gap",
+    name: "TKEES Glossy Sandals",
+    price: "55.00",
+    size: "6,6.5,7,7.5,8",
+    productID: "women24",
+    catagory: "party",
+    color: "black",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67745745_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67745745_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },
+  {
+    brand: "Kaniroot",
+    name: "TKEES Glossy Sandals",
+    price: "77.00",
+    size: "6,6.5,8,8.5",
+    productID: "women25",
+    catagory: "formal",
+    color: "pink",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67060459_068_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67060459_068_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },   
+  {
+    brand: "Kaniroot",
+    name: "Embellished Tie-Up Sandals",
+    price: "84.00",
+    size: "7,7.5,8",
+    productID: "women25",
+    catagory: "formal",
+    color: "white",
+    image2: "https://images.urbndata.com/is/image/Anthropologie/67013219_010_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+    image: "https://images.urbndata.com/is/image/Anthropologie/67013219_010_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+  },   
+    ]
+
+                                             // whole array(productArr)/data added into localStorage
+
+                                             localStorage.setItem("clothingLSData", JSON.stringify(productData));
+
+// Now getting same data from localStorage and storing it in productArr named variable 
+
+let productArr = JSON.parse(localStorage.getItem("clothingLSData"));
+
+
+disp_prod(productArr);
+let sorting_data = document.querySelector("#sorting_opt");
+sorting_data.addEventListener("change", sorting);
+
+                            // creating a function for shorting 
+
+function sorting() {
+let sortAs = document.querySelector("#sorting_opt").value;
+// console.log(sortAs)
+if (sortAs == "none" || sortAs == "newest" || sortAs == "bestselling") {
+disp_prod(productData);
+console.log(sortAs)
+}
+else if (sortAs == "ascending") {
+productArr.sort(function (a, b) {
+return a.price - b.price;
+});
+disp_prod(productArr);
+}
+else if (sortAs == "descending") {
+productArr.sort(function (a, b) {
+return b.price - a.price;
+});
+disp_prod(productArr);
+}
+};
+                    
+// creating a function for displaying data and also creating all the element which is required fo product div
+function disp_prod(productArr) {
+document.querySelector("#product").innerHTML = "";
+productArr.forEach(function (elem) {
+
+let prod_count=productArr.length;
+document.querySelector("#cat_title>div>p").innerText=`${prod_count} products`;
+
+let div = document.createElement("div");
+
+let img = document.createElement("img");
+img.setAttribute("src", elem.image);
+
+img.addEventListener("mouseover",function(){
+img.setAttribute("src", elem.image2);
+});
+img.addEventListener("mouseout",function(){
+img.setAttribute("src", elem.image);
+});
+let name = document.createElement("p");
+name.innerText = elem.name;
+
+let currency = document.createElement("span");
+currency.innerText = "$";
+
+// let addtocart=document.createElement("button");
+//     addtocart.innerText="Add To Cart";
+
+let price = document.createElement("span");
+price.innerText = elem.price;
+
+let br1 = document.createElement("br");
+
+let color1 = document.createElement("button");
+color1.setAttribute("id", "Fst_color");
+color1.setAttribute("class", "color");
+
+let color2 = document.createElement("button");
+color2.setAttribute("id", "Snd_color");
+color2.setAttribute("class", "color");
+
+let color3 = document.createElement("button");
+color3.setAttribute("id", "Trd_color");
+color3.setAttribute("class", "color");
+
+let div_col = document.createElement("div");
+div_col.append(color1, color2, color3);
+
+let button1 = document.createElement("button");
+button1.innerText = "Buy Now";
+button1.setAttribute("id", "buynow_btn");
+button1.addEventListener("click", buynow);
+
+let button2 = document.createElement("button");
+button2.innerText = "Add to cart";
+button2.setAttribute("id", "cart_btn");
+button2.addEventListener("click", getincart);
+
+let div_btn=document.createElement("div");
+div_btn.setAttribute("id","purchase_btn")
+div_btn.append(button1, button2);
+document.querySelector("#product").append(div);
+div.append(img, name, currency, price, br1, div_col, div_btn);
+
+function buynow() {
+let buyingItem = {
+Price: elem.price
+}
+// console.log(buyingItem)
+};
+function getincart() {
+let addedItem = {
+Image: elem.image,
+Name: elem.name,
+Price: elem.price
+}
+
+console.log(addedItem)
+
+alert("Product added Successfully");
+};
+});
+};
+
+
+
+// addtocart.addEventListener("click",function(){
+//       if(addcartfunction(el.productID)===true){
+//         alert("Added Product Sucessfully");
+//         cartLS.push(el);
+//         localStorage.setItem("cartpage",JSON.stringify(cartLS));
+//       }else{
+//         alert("Product Already Exists")
+//       };
+//     })
+
+
+
+
+let expand=document.querySelectorAll(".expand_opt")
+expand.forEach(function(elem){
+elem.addEventListener("click",function(){
+elem.classList.toggle("active");
+});
+});
+
+                             // For filtering content 
+let filter=document.querySelectorAll(".expand_opt");
+let reset=document.querySelector("#filter>h4");
+reset.addEventListener("click",function(){
+window.location.reload();
+})
+filter.forEach(function(elem){
+elem.addEventListener("change",function(){
+let selected=elem.value;
+
+let filtered_arr=productArr.filter(function(elem){
+
+// For Price 
+if(selected==1){
+return elem.price<25;
+}
+else if(selected==2){
+return (elem.price>25&&elem.price<=50)
+}
+else if(selected==3){
+return (elem.price>50&&elem.price<=100);
+}
+else if(selected==4||selected=="Black"||selected=="Red"||selected=="Pink"||selected=="AGOLDE"||selected=="Nwe York"){
+return elem.price>100;
+}
+
+// For Color 
+else if(selected=="white"){
+return elem.color=="white";
+}
+else if(selected=="blue"){
+return elem.color=="blue";
+}
+else if(selected=="black"){
+return elem.color=="black";
+}
+else if(selected=="green"){
+return elem.color=="green";
+}
+else if(selected=="brown"){
+return elem.color=="brown";
+}
+else if(selected=="yellow"){
+return elem.color=="yellow";
+}
+else if(selected=="pink"){
+return elem.color=="pink";
+}
+else{
+return productData
+}
+})
+disp_prod(filtered_arr)
+});
+});
+// console.log(productArr)
+document.querySelector("#casual").addEventListener("click",function(){
+      displaycasual();
+    });
+
+    function displaycasual(){
+      let filtered=productData.filters(function(el){
+        return el.catagory==="Casual";
+      })
+      displayproduct(filtered);
+    }
+
+
+    document.querySelector("#party").addEventListener("click",function(){
+      displayitem();
+    });
+
+    function displayitem(){
+      let filtered=productData.filters(function(el){
+        return el.catagory==="party";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#sports").addEventListener("click",function(){
+      displaysports();
+    });
+
+    function displaysports(){
+      let filtered=productData.filters(function(el){
+        return el.catagory==="sports";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#festive").addEventListener("click",function(){
+      displayfestive();
+    });
+
+    function displayfestive(){
+      let filtered=productData.filters(function(el){
+        return el.catagory==="festive";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#formal").addEventListener("click",function(){
+      displayformal();
+    });
+
+    function displayformal(){
+      let filtered=productData.filters(function(el){
+        return el.catagory==="formal";
+      })
+      displayproduct(filtered);
+    }
+
+    document.querySelector("#formal").addEventListener("click",function(){
+      displaysize();
+    });
+
+    function displaysize(){
+      let filtered=productData.filters(function(el){
+        return el.catagory==="formal";
+      })
+      displayproduct(filtered);
+    }
+
+    // function addcartfunction(id){
+    // for(let i=0;i<cartLS.length;i++){
+    // if(cartLS[i].productID==id){
+    // return false;
+    // }
+    // }
+    // return true;
+    // }
+</script>

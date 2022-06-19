@@ -1,0 +1,183 @@
+.about {
+    margin: auto;
+    margin-top: 5%;
+    width: 93%;
+    height: auto;
+  }
+  .about hr {
+    width: 100%;
+  }
+  .about > p {
+    margin: 10px;
+    font-size: 30px;
+    line-height: 1.5;
+  }
+  .about p + p {
+    font-size: 15px;
+  }
+  .about a {
+    color: rgb(31, 31, 208);
+  }
+  footer {
+    background-color: #f7f6f1;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    /* border: 1px solid red; */
+  }
+  footer .email {
+    display: flex;
+    justify-content: space-between;
+  
+    /* border: 1px solid red; */
+    padding: 0 3%;
+    gap: 10%;
+    padding-right: 0%;
+  }
+  footer .email > div:nth-child(1) > p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+  footer .email > div:nth-child(1) > p + p {
+    font-size: 15px;
+  }
+  footer .email > div:nth-child(2) {
+    /* border: 1px solid red; */
+    font-size: 16px;
+    padding: 15px;
+    width: 70%;
+    padding-right: 0;
+  }
+  footer .email > div:nth-child(2) #email {
+    margin-top: 10px;
+    padding: 15px;
+    width: 70%;
+    border-radius: none;
+  }
+  footer .email > div:nth-child(2) #submit {
+    padding: 15px;
+    width: 20%;
+    border: none;
+    border-radius: none;
+    color: white;
+    background-color: #4b5666;
+    margin-left: 10px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  footer .email > div:nth-child(2) #submit:hover {
+    padding: 16px;
+    font-size: 18px;
+  }
+  footer .section1 > div:nth-child(2) {
+    /* border: 1px solid red; */
+    margin-top: 2%;
+    /* text-align: center; */
+    font-size: 12px;
+    margin-left: 3%;
+  }
+  footer .section1 > div:nth-child(2) a {
+    color: rgb(31, 31, 208);
+    text-decoration: underline;
+  }
+  footer hr {
+    width: 100%;
+    margin: 2% 0;
+  }
+  footer .fcontainer {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    line-height: 2;
+    font-size: 15px;
+  }
+  
+  footer .fcontainer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #26262b;
+    font-weight: 400;
+  }
+  footer .fcontainer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  footer li:hover a {
+    color: rgb(34, 34, 158);
+    cursor: pointer;
+  }
+  footer .icons {
+    width: 20%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 5%;
+  }
+  
+  footer .icons div:hover {
+    color: rgb(214, 83, 83);
+    cursor: pointer;
+  }
+  footer .lstimg {
+    width: 90%;
+    /* height: 1%; */
+    margin: auto;
+    margin-top: 1%;
+  }
+  footer .lstimg img {
+    width: 100%;
+  }
+  footer .countries {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+    margin: auto;
+    margin-top: 3%;
+  }
+  footer .countries div {
+    display: inline-block;
+    font-size: 12px;
+    border-right: 1px solid gray;
+    padding: 0 5px;
+  }
+  footer .countries div:nth-child(6),
+  footer .copyright > .left div:nth-child(6) {
+    border: none;
+  }
+  footer .copyright {
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    /* border: 1px solid red; */
+    font-size: 12px;
+    margin: auto;
+    margin-top: 1%;
+  }
+  footer .copyright .leftcopy {
+    display: flex;
+    justify-content: flex-start;
+  }
+  footer .copyright .leftcopy div {
+    display: inline-block;
+    padding: 0 10px;
+    color: rgb(45, 45, 199);
+    border-right: 1px solid gray;
+  }
+  footer .copyright .rightcopy {
+    color: gray;
+    padding-right: 1%;
+  }
+  
+  #navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }

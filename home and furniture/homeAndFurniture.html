@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home And Furniture</title>
+
+    <link rel="stylesheet" href="Home_style.css" />
+    <link rel="stylesheet" href="Header_style.css" />
+    <link rel="stylesheet" href="navbar_style.css" />
+
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,300&display=swap");
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      font-family: "Poppins", sans-serif;
+    }
+    #container {
+
+      margin: auto;
+      /* border: solid blue; */
+      width: 95%;
+      height: auto;
+      display: flex;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+    #left {
+      width:auto
+    }
+    #right {
+      width: auto
+
+    }
+
+    #right > div:nth-child(1) > img {
+      width: 100%;
+    }
+    #right > div:nth-child(2) {
+      margin-top: 20px;
+    }
+    #right > div:nth-child(2) > img {
+      width: 100%;
+      height: 500px;
+    }
+
+    #left > p {
+      border-bottom: 1px solid rgb(222, 222, 222);
+      font-weight: 400;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .left_font > div > a {
+      color: #26262c;
+      text-decoration: none;
+      font-family: "Avenir Book", sans-serif;
+      line-height: 25px;
+      font-size: 17px;
+    }
+
+    #option > div {
+      margin-bottom: 12px;
+    }
+    #option > div:nth-child(1) > a {
+      color: #47afe0;
+      border-bottom: 1px solid #47afe0;
+    }
+
+    #option > div:hover {
+      color: black;
+      text-decoration: underline;
+    }
+
+    /* For filtering content  */
+
+    #filter > h4 {
+      font-size: 18px;
+      color: gray;
+    }
+
+    #filter > h4:hover {
+      color: rgb(85, 82, 82);
+    }
+    #filter_heading {
+      border-bottom: 1px solid rgb(222, 222, 222);
+      margin: 40px auto 0px auto;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    #filter > div {
+      padding: 20px 0;
+      border-bottom: 1px solid rgb(222, 222, 222);
+    }
+
+    .expand_opt {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .expand_opt:hover {
+      color: rgb(102, 168, 180);
+    }
+    .expand_opt::after {
+      content: "\002B";
+      font-weight: 600;
+      /* color: gray; */
+    }
+    .expand_opt.active::after {
+      content: "\2212";
+    }
+    #filter > div ~ div:hover {
+      color: rgb(102, 168, 180);
+    }
+    .expand_opt {
+      width: 100%;
+      margin: 10px;
+    }
+    .left_font:hover {
+      cursor: pointer;
+    }
+
+    #right > div:nth-child(4) {
+      margin-top: 20px;
+    }
+    #right > div:nth-child(4) > img {
+      width: 100%;
+      height: 600px;
+    }
+    #right > div:nth-child(4) > img:hover {
+      cursor: pointer;
+    }
+    #left {
+      width: 45%;
+      /* border: solid black; */
+    }
+  
+
+    #innerC1 {
+      /* border: solid black; */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, auto);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    #innerC2 {
+      display: flex;
+      /* justify-content:space-evenly; */
+      /* justify-content: space-between;*/
+      margin-top: 20px;
+    }
+    #innerC2 > div {
+      display: flex;
+      justify-content: space-around;
+    }
+    #innerC2 > div > img {
+      width: 95%;
+    }
+    #buttonWali {
+      /* border: solid black; */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, auto);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    #buttonWali > div {
+      display: flex;
+      /* border: solid red; */
+      align-items: center;
+      justify-content: center;
+      /* display: block; */
+      flex-direction: column;
+    }
+    #buttonWali > div > img {
+      width: 100%;
+    }
+    #buttonWali > div > button {
+      margin-top: 10px;
+      font-size: large;
+      padding: 4px 10px;
+      background-color: white;
+    }
+    #new {
+      margin-top: 20px;
+    }
+    #new > img {
+      width: 100%;
+    }
+    #one-more3 {
+      /* border: solid black; */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, auto);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    /* #one-more3 > div > img {
+      width: 100%;
+    } */
+    .image {
+      width: 100%;
+      height: 400px;
+    }
+    .image :hover{
+     cursor: pointer;
+    }
+    #texture {
+      /* border: solid black; */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, auto);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    #texture > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    p + button {
+      /* border: solid red; */
+      padding: 10px -20px;
+      margin-top: 10px;
+      font-size: 20px;
+      background-color: white;
+    }
+    .fullWidth {
+      width: 100%;
+    }
+    .fullWidth:hover {
+     cursor: pointer;
+    }
+    .marginUpar {
+      margin-top: 20px;
+    }
+    .hoverKrLe:hover{
+      cursor: pointer;
+    }
+    #last{
+      text-align: center;
+    }
+
+    .caruse{
+      position: relative;
+    }
+    .caruse1{
+      position: relative;
+    }
+    .b1{
+      position: absolute;
+      top: 40%;
+      background-color: white;
+      font-size: 50px;
+      color: black;
+    }
+    .b21{
+      position: absolute;
+      top: 40%;
+      background-color: white;
+      font-size: 50px;
+      color: black;
+    }
+    .caruse>button:nth-child(2){
+      left: 0%;
+      /* font-size: large; */
+      position: absolute;
+    }
+    .caruse1>button:nth-child(2){
+      left: 0%;
+      /* font-size: large; */
+      position: absolute;
+    }
+
+    .caruse>button:nth-child(3){
+      right: 0%;
+      /* font-size: large; */
+      position: absolute;
+    }
+    .caruse1>button:nth-child(3){
+      right: 0%;
+      /* font-size: large; */
+      position: absolute;
+    }
+
+
+    .b2{
+      position: absolute;
+      background-color: white;
+      font-size: 20px;
+      color: black;
+      bottom: 2%;
+
+    }
+    .b22{
+      position: absolute;
+      background-color: white;
+      font-size: 20px;
+      color: black;
+      bottom: 2%;
+
+    }
+    .caruse>button:nth-child(4){
+      left: 25%;
+      /* font-size: large; */
+      position: absolute;
+      padding: 0px 5px
+    }
+    .caruse1>button:nth-child(4){
+      left: 25%;
+      /* font-size: large; */
+      position: absolute;
+      padding: 0px 5px
+    }
+    .caruse>button:nth-child(5){
+      right: 25%;
+      /* font-size: large; */
+      position: absolute;
+      padding: 0px 5px
+    }
+    .caruse1>button:nth-child(5){
+      right: 25%;
+      /* font-size: large; */
+      position: absolute;
+      padding: 0px 5px
+    }
+  </style>
+  <body>  
+
+      <div class="topnav">
+      <div>
+        <a href="#"
+          ><i class="fa-solid fa-globe"></i> English ($)
+          <i class="fa-solid fa-angle-down"></i
+        ></a>
+      </div>
+      <div>
+        <a href="#"><i class="fa-regular fa-user"></i> Sign in / Sign Up</a>
+      </div>
+    </div>
+
+
+      <nav id="navbar">
+    <div class="logo stickylogo">
+      <div>
+        <div class="logoname"><p>A N T H R O P O L O G I E</p></div>
+        <div>
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="search">
+        <div>
+          <form action="">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search Anthropologie"
+            />
+            <div>
+              <p><i class="fa-solid fa-magnifying-glass"></i></p>
+            </div>
+          </form>
+        </div>
+        <div>
+          <p><i class="fa-solid fa-bag-shopping"></i></p>
+        </div>
+      </div>
+    </div>
+<header id="header">
+<ul class="menu">
+  <li class="home">
+    <a href="#">New!</a>
+    <div class="submenu new-megamenu">
+      <div class="newleft">
+        <h4>Shop by catagory</h4>
+        <hr>
+        <div class="newsubleft">
+          <div>
+            <ul>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Beauty and wellness</a></li>
+              <li><a href="#">Clothing</a></li>
+              <li><a href="#">Dresses</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">Home & Furniture</a></li>
+              <li><a href="#">Plus</a></li>
+              <li><a href="#">Shoes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="newright">
+        <div>
+          <h4>Featured</h4>
+          <hr />
+          <ul>
+            <li><a href="#">Mark D. Sikes</a></li>
+            <li><a href="#">The Ethereak Edit</a></li>
+            <li><a href="#">How to style serves</a></li>
+            <li><a href="#">The 90s shop</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/2SeKYBtUmynzKkUXudIm2q/7a8841d396011306d04d226a13164716/061322_BrandSpotlight_FarmRio_Supernav_NEW.jpg?w=295&q=80&fm=webp"
+            alt=""
+          />
+        </div>
+      </div> 
+  </li>
+  <li class="dresses">
+    <a href="#">Dresses</a>
+    <div class="submenu dresses-megamenu">
+      <div class="drleft">
+        <h4>Shop by catagory</h4>
+        <hr>
+        <div class="sub-drleft">
+          <div>
+            <ul>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">New!</a></li>
+              <li><a href="#">Ocassion & Part Dresses</a></li>
+              <li><a href="#">Lounge & casual dresses</a></li>
+              <li><a href="#">Maxi Desses</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">Mini & Tunic dresses</a></li>
+              <li><a href="#">Midi dresses</a></li>
+              <li><a href="#">petite dresses</a></li>
+              <li><a href="#">Plus dresses</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="drright">
+        <h4>Featured shops</h4>
+        <hr>
+        <div>
+          <ul>
+            <li><a href="#">Wedding guest dresses</a></li>
+            <li><a href="#">Little black dresses</a></li>
+            <li><a href="#">Little white dresses</a></li>
+          </ul>
+        </div>
+      </div>
+      </div> 
+  </li>
+  <li class="clothing">
+    <a href="#">Clothing</a>
+    <div class="submenu clothing-megamenu">
+      <div class="clleft">
+        <h4>shop all clothing</h4>
+        <hr>
+        <div class="sub-clleft">
+          <div>
+            <ul>
+              <li><a href="#">Shop all clothing</a></li>
+              <li><a href="#">new!</a></li>
+              <li><a href="#">top rated</a></li>
+              <li><a href="#">active wear</a></li>
+              <li><a href="#">dresses</a></li>
+              <li><a href="#">getaway & resort wear</a></li>
+              <li><a href="#">intimates & lingerie</a></li>
+              <li><a href="#">jackets</a></li>
+              <li><a href="#">jeans</a></li>
+              <li><a href="#">jumpsuits</a></li>
+              <li><a href="#">kimonos</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">loungewear</a></li>
+              <li><a href="#">pants</a></li>
+              <li><a href="#">petites</a></li>
+              <li><a href="#">plus</a></li>
+              <li><a href="#">sets</a></li>
+              <li><a href="#">shorts</a></li>
+              <li><a href="#">skirts</a></li>
+              <li><a href="#">sleepwear</a></li>
+              <li><a href="#">sweaters</a></li>
+              <li><a href="#">swimmer</a></li>
+              <li><a href="#">tops & tees</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>featured</h4>
+        <hr>
+        <ul>
+          <li><a href="#">30% Off on selected swimmers, sandals & more</a></li>
+          <li><a href="#">The ethereal edits</a></li>
+          <li><a href="#">the trend: utility</a></li>
+          <li><a href="#">The 90's shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore jeans</h4>
+        <hr>
+        <ul>
+          <li><a href="#">the denim fit guide</a></li>
+          <li><a href="#">fiare & bootcut jeans</a></li>
+          <li><a href="#">straight-leg jeans</a></li>
+          <li><a href="#">wide-leg jeans</a></li>
+          <li><a href="#">boyfriend jeans</a></li>
+          <li><a href="#">skinny jeans</a></li>
+          <li><a href="#">shop all jeans</a></li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.ctfassets.net/5de70he6op10/4FPue2L536EKtKp14jN8Jz/4619dd6c24ba2f333fb1d5305d8e1599/061322_BrandSpotlight_FarmRio_Supernav_CLOTHING.jpg?w=295&q=80&fm=webp" alt="">
+      </div>
+      
+    </div>
+  </li>
+  <li class="shoes">
+    <a href="#">Shoes</a>
+    <div class="submenu shoes-megamenu">
+      <div class="shleft">
+        <h4>shop all shoes</h4>
+        <hr>
+        <div class="sub-shleft">
+          <div>
+            <ul>
+              <li><a href="#">New!</a></li>
+              <li><a href="#">Boots & Booties</a></li>
+              <li><a href="#">Flats</a></li>
+              <li><a href="#">Heels & Wedges</a></li>
+              <li><a href="#">mules & clogs</a></li>
+              
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">sandals</a></li>
+              <li><a href="#">slippers</a></li>
+              <li><a href="#">sneakers</a></li>
+              <li><a href="#">slippers</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>featured</h4>
+        <hr>
+        <ul>
+          <li><a href="#">fisherman sandals</a></li>
+          <li><a href="#">party shoes</a></li>
+          <li><a href="#">plateform sandals</a></li>
+          <li><a href="#">strappy sandals & heels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Brands we love</h4>
+        <hr>
+        <ul>
+          <li><a href="#">beek</a></li>
+          <li><a href="#">birkenstock</a></li>
+          <li><a href="#">jeffrey campbell</a></li>
+          <li><a href="#">on</a></li>
+          <li><a href="#">seychelles</a></li>
+          <li><a href="#">doice vita</a></li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.ctfassets.net/5de70he6op10/4gMhsxNkhD3jZ2DI1AewUi/6c9e2424b8edb22a14699fcadb3b6656/060922_30offSelectSwim_Supernav.jpg?w=295&q=80&fm=webp" alt="">
+      </div>           
+    </div>
+  </li>
+  <li class="accessories">
+    <a href="#">Accessories</a>
+    <div class="submenu accessories-megamenu">
+      <div class="accleft">
+        <h4>shop by catagory</h4>
+        <hr>
+        <div class="sub-accleft">
+          <div>
+            <ul>
+              <li><a href="#">shop all accessories</a></li>
+              <li><a href="#">new!</a></li>
+              <li><a href="#">top-rated</a></li>
+              <li><a href="#">bags & snall accessories</a></li>
+              <li><a href="#">belts</a></li>
+              <li><a href="#">fashion gloves</a></li>
+              <li><a href="#">hair accessories</a></li>
+              
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">hats</a></li>
+              <li><a href="#">jwelry</a></li>
+              <li><a href="#">scarves & kimonos</a></li>
+              <li><a href="#">socks & tights</a></li>
+              <li><a href="#">sunglasses & reading glasses</a></li>
+
+              <li><a href="#">travel & tech</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>explore jewelry</h4>
+        <hr>
+        <ul>
+          <li><a href="#">Necklaces</a></li>
+          <li><a href="#">Earrings</a></li>
+          <li><a href="#">Bracelets</a></li>
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Monogram & Personalized Jewelry</a></li>
+          <li><a href="#">Demi-Fine & Fine</a></li>
+          <li><a href="#">Shop All Jewelry</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>featured</h4>
+        <hr>
+        <ul>
+          <li><a href="#">How To Style Scarvesa></li>
+          <li><a href="#">Stackable Jewelry</a></li>
+          <li><a href="#">The Summer Accessories Edit</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.ctfassets.net/5de70he6op10/4gMhsxNkhD3jZ2DI1AewUi/6c9e2424b8edb22a14699fcadb3b6656/060922_30offSelectSwim_Supernav.jpg?w=295&q=80&fm=webp" alt="">
+      </div>           
+    </div>
+  </li>
+  <li class="gifts">
+    <a href="#">Gifts & candles</a>
+    <div class="submenu gifts-megamenu">
+      <div class="giftleft">
+        <h4>shop by catagory</h4>
+        <hr>
+        <div class="sub-giftleft">
+          <div>
+            <ul>
+              <li><a href="#">Shop All Gifts & Candles</a></li>
+              <li><a href="#">Gift Ideas</a></li>
+              <li><a href="#">Candles</a></li>
+              <li><a href="#">Home Gifts</a></li>
+                                  
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">Gifts by Recipient</a></li>
+              <li><a href="#">Top-Rated Gifts</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>gifts by price</h4>
+        <hr>
+        <ul>
+          <li><a href="#">Gifts Under $25</a></li>
+          <li><a href="#">Gifts Under $50</a></li>
+          <li><a href="#">Gifts Under $75</a></li>
+          <li><a href="#">Gifts Under $100</a></li>
+         
+        </ul>
+      </div>
+      <div>
+        <h4>Curated Gift Shops</h4>
+        <hr>
+        <ul>
+          <li><a href="#">The Pet Shop</li>
+          <li><a href="#">The Monogram & Personalized
+            Gifts Shop</a></li>
+          <li><a href="#">The Gift Set Shop</a></li>
+          <li><a href="#">The Games Shop</a></li>
+        </ul>
+      </div>                     
+    </div>
+  </li>
+  <li class="homes">
+    <a href="#">Homes & Furniture</a>
+    <div class="submenu homes-megamenu">
+      <div class="homesleft">
+        <h4>shop by catagory</h4>
+        <hr>
+        <div class="sub-homesleft">
+          <div>
+            <ul>
+              <li><a href="#">Explore All Home & Furniture</a></li>
+              <li><a href="#">New!</a></li>
+              <li><a href="#">20% Off All Bedding, Rugs, Candles, Dining & More</a></li>
+              <li><a href="#">Bath</a></li>
+              <li><a href="#">Bedding</a></li>
+              <li><a href="#">Candles</a></li>
+              <li><a href="#">Décor</a></li>                    
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Kids</a></li>
+              <li><a href="#">Kitchen & Dining</a></li>
+              <li><a href="#">Outdoor</a></li>
+              <li><a href="#">Stationery</a></li>
+              <li><a href="#">Sale Home & Furniture</a></li>
+              <li><a href="#">Explore Terrain</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Exclusively For Anthro: Artist
+          Collaborations</h4>
+        <hr>
+        <ul>
+          <li><a href="#">Mark D. Sikes</a></li>
+          <li><a href="#">Sarah Campbell</a></li>
+          <li><a href="#">Amber Lewis</a></li>
+          <li><a href="#">Nathalie Lété</a></li>
+          <li><a href="#">Lemieux et Cie</a></li>
+          <li><a href="#">Explore Artist Collaborations</a></li>
+         
+        </ul>
+      </div>
+      <div>
+        <h4>AnthroLiving House Tours</h4>
+        <hr>
+        <ul>
+          <li><a href="#">*Sol*ful Spaces</a></li>
+          <li><a href="#">Refreshed Perspectives</a></li>
+          <li><a href="#">The Story Of Home</a></li>
+          <li><a href="#">Primary's Cool</a></li>
+          <li><a href="#">Be Our Guest</a></li>
+          <li><a href="#">True Nature</a></li>
+          <li><a href="#">Lit From Within</a></li>
+          <li><a href="#">Explore AnthroLiving House Tours</a></li>
+        </ul>
+      </div>                     
+    </div>
+  </li>
+  <li class="beauty">
+    <a href="#">Beauty and Wellness</a>
+    <div class="submenu beauty-megamenu">
+      <div class="beautyleft">
+        <h4>shop by catagory</h4>
+        <hr>
+        <div class="sub-beautyleft">
+          <div>
+            <ul>
+              <li><a href="#">Shop All Beauty & Wellness</a></li>
+              <li><a href="#">New!</a></li>
+              <li><a href="#">Top-Rated</a></li>
+              <li><a href="#">Bath & Body</a></li>
+              <li><a href="#">Candles & Home Fragrance</a></li>
+              <li><a href="#">Hair Care</a></li>
+              <li><a href="#">Makeup</a></li>
+              <li><a href="#">Nails</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="#">Perfume</a></li>
+              <li><a href="#">Skincare</a></li>
+              <li><a href="#">Sun Care</a></li>
+              <li><a href="#">Wellness</a></li>
+              <li><a href="#">Tools & Brushes</a></li>
+
+              <li><a href="#">Workout Gear</a></li>
+              <li><a href="#">Sale Beauty & Wellness</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>featured</h4>
+        <hr>
+        <ul>
+          <li><a href="">The Summer Beauty Edit: Beauty
+            & Self-Care</a></li>
+          <li><a href="">Travel Size</a></li>
+          <li><a href="">Beauty Gifts</a></li>
+          <li><a href="">The Mask Shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>featured</h4>
+        <hr>
+        <ul>
+          <li><a href="">Capri Blue</a></li>
+          <li><a href="">Caudalie</a></li>
+          <li><a href="">Floral Street</a></li>
+          <li><a href="">Lollia</a></li>
+          <li><a href="">Mer-Sea & Co.</a></li>
+          <li><a href="">slip</a></li>
+          <li><a href="">Supergoop!</a></li>
+          <li><a href="">Tocca</a></li>
+          <li><a href="">Vitruvi</a></li>
+          <li><a href="">Youth to the People</a></li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.ctfassets.net/5de70he6op10/4gMhsxNkhD3jZ2DI1AewUi/6c9e2424b8edb22a14699fcadb3b6656/060922_30offSelectSwim_Supernav.jpg?w=295&q=80&fm=webp" alt="">
+      </div>           
+    </div>
+  </li>
+  <li class="garden">
+    <a href="#">Garden & Outdoor</a>
+    <div class="submenu garden-megamenu">
+      <div class="gardenleft">
+        <h4>shop by catagory</h4>
+        <hr>
+        <div class="sub-gardenleft">
+          <div>
+            <ul>
+              <li><a href="">Shop All Garden & Outdoor</a></li>
+              <li><a href="">Planters</a></li>
+              <li><a href="">Garden & Utility</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="">Outdoor Living</a></li>
+              <li><a href="">Furniture</a></li>
+              <li><a href="">Plants & Flowers</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="wedding">
+    <a href="#">Weddings</a>
+    <div class="submenu wedding-megamenu">
+      <div class="weddingleft">
+        <h4>shop by catagory</h4>
+        <hr>
+        <div class="sub-weddingleft">
+          <div>
+            <ul>
+              <li><a href="">Explore All Weddings</a></li>
+              <li><a href="">Shop All Weddings</a></li>
+              <li><a href="">New</a></li>
+              <li><a href="">Bride</a></li>
+              <li><a href="">Bridesmaids & Bridal Party</a></li>
+
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="">Mother of the Bride</a></li>
+              <li><a href="">Formal Dresses</a></li>
+              <li><a href="">Plus</a></li>
+              <li><a href="">Shoes & Accessories</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.ctfassets.net/5de70he6op10/2iYTpFYonIxBrfJzQ1yZfh/59a2b461dabe0e202f89acf56aa652cb/L1_Weddings_Dropdown_CS.jpg?w=922&q=80&fm=webp" alt="">
+      </div>
+    </div>
+  </li>
+  <li class="sale">
+    <a href="#">Sale</a>
+    <div class="submenu sale-megamenu">
+    <div class="saleleft">
+      <h4>shop by catagory</h4>           
+      <hr>
+      <div class="sub-saleleft">
+        <div>
+          <ul>
+            <li><a href="">Shop All Sale</a></li>
+            <li><a href="">Freshly Cut</a></li>
+            <li><a href="">Accessories</a></li>
+            <li><a href="">Beauty & Wellness</a></li>
+            <li><a href="">Clothing</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><a href="">Home & Furniture</a></li>
+            <li><a href="">Petites</a></li>
+            <li><a href="">Plus</a></li>
+            <li><a href="">Shoes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4>shop by price</h4>
+      <hr>
+      <ul>
+        <li><a href="">Under $25</a></li>
+        <li><a href="">Under $50</a></li>
+        <li><a href="">Under $75</a></li>
+        <li><a href="">Under $100</a></li>
+      </ul>   
+    </div> 
+    </div>
+  </li>
+</ul>
+</header>
+  </nav>
+
+    <div id="container">
+
+
+      <div id="left">
+        <p class="option_heading">Browse by:</p>
+        <div id="option" class="left_font">
+          <div><a href="">Clothing</a></div>
+          <div><a href="">New!</a></div>
+          <div><a href="">Top-Rated</a></div>
+          <div><a href="">Activewear</a></div>
+          <div><a href="">Dresses</a></div>
+          <div><a href="">Getaway & Resort Wear</a></div>
+          <div><a href="">Intimates& Lingerie</a></div>
+          <div><a href="">Jackets</a></div>
+          <div><a href="">Jeans</a></div>
+          <div><a href="">Jumpsuits</a></div>
+          <div><a href="">Kimonos</a></div>
+          <div><a href="">Lougewear</a></div>
+          <div><a href="">pants</a></div>
+          <div><a href="">Petites</a></div>
+          <div><a href="">Plus</a></div>
+          <div><a href="">Sets</a></div>
+          <div><a href="">Shorts</a></div>
+          <div><a href="">Skirts</a></div>
+          <div><a href="">Sleepwear</a></div>
+          <div><a href="">Sweaters</a></div>
+          <div><a href="">Swimwear</a></div>
+          <div><a href="">Tops & Tees</a></div>
+        </div>
+      </div>
+
+      <div id="right" class="hoverKrLe">
+        <div>
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/2lrwPnVC0f1gFKrByrwOAe/98bd752c2fe1364273eabf9aca9aec95/061522_20OffTextiles_HPGSecondaryBanner_LS_01.jpg?w=2882&q=80&fm=webp"
+            alt="aa"
+          />
+        </div>
+        <div class="caruse">
+          <img class="c1"
+            src="https://www.architectureartdesigns.com/wp-content/uploads/2016/03/18-5-630x419.jpg",
+
+            alt=""
+
+          />
+          <button class="b1"><</button>
+          <button class="b1">></button>
+          <button class="b2">shop the new collection</button>
+          <button class="b2">explore the summer 2022 edit</button>
+        </div>
+        <div id="innerC1">
+          <div >
+            <img
+              class="fullWidth"
+              src="https://images.urbndata.com/is/image/Anthropologie/45407863AA_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="fullWidth"
+              src="https://images.urbndata.com/is/image/Anthropologie/45457888AA_006_b?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="fullWidth"
+              src="https://images.urbndata.com/is/image/Anthropologie/45407802AA_067_b?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="caruse1">
+          <img class="c2"
+            class="fullWidth"
+            src="https://content.r9cdn.net/rimg/himg/53/3c/38/arbisoftimages-35767-LGBRL-P074-Palm-Suite-Terrace.adapt.16x9.1280.720-image.jpg?crop=true&width=500&height=350"
+            alt="nono"
+          
+          />
+          <button class="b21">
+            <
+          </button>
+          <button class="b21">
+            >
+          </button>
+          <button class="b22">
+            take the full tour house
+          </button>
+          <button class="b22">
+            shop the collection
+          </button>
+        </div>
+        <div id="innerC2">
+          <div>
+            <img class="fullWidth"
+              src="https://www.kayak.com/rimg/himg/8e/33/c8/expediav2-605464-0a6df5-277470.jpg?width=720&height=576&crop=true"
+              alt=""
+            />
+          </div>
+          <div>
+            <img class="fullWidth"
+              src="https://images.ctfassets.net/5de70he6op10/5EyKuzEFhx8nVxN8fu3deP/a0257eab9ca230192155f81a7b06e921/JuneSiteContent_Home_Pura_2x.jpg?w=1440&q=80&fm=webp"
+              alt="sss"
+            />
+          </div>
+        </div>
+        <div id="buttonWali">
+          <div>
+            <img class="fullWidth"
+              src="https://images.urbndata.com/is/image/Anthropologie/65815623_040_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+              alt=""
+            />
+            <button>Shop the Skies Collection</button>
+          </div>
+          <div>
+            <img class="fullWidth"
+              src="https://images.urbndata.com/is/image/Anthropologie/65753162_038_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+              alt=""
+            />
+            <button>Shop the Skies Collection</button>
+          </div>
+          <div>
+            <img class="fullWidth"
+              src="https://images.urbndata.com/is/image/Anthropologie/65858839_060_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+              alt=""
+            />
+            <button>Shop the Skies Collection</button>
+          </div>
+        </div>
+        <div id="new">
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/66EQUlXgrBIE4akPH78UVn/bb9344cac779982cc1d61fd865ceadca/HomeL1_Gateway_LS_21.jpg?w=2640&q=80&fm=webp"
+            alt=""
+          />
+        </div>
+        <div id="one-more3">
+          <div>
+            <img 
+              class="image"
+              src="https://www.kayak.co.in/rimg/himg/16/25/b5/ice-35767-64c73a-171632.jpg?width=720&height=576&crop=true"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="image"
+              src="https://images.ctfassets.net/5de70he6op10/2WDyAQuLnZ5ut2w9ns1CYo/a0526feb649e8811b529bb093615007e/HomeL1_Gateway_LS_09-02.jpg?w=856&q=80&fm=webp"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="image"
+              src="https://images.ctfassets.net/5de70he6op10/2zLljk4ycgCb7DTQzJmKZh/6d4231cf6669a037c2d7e90a27234c3b/HomeL1_Gateway_LS_09-03.jpg?w=856&q=80&fm=webp"
+              alt=""
+            />
+          </div>
+        </div>
+        <div id="texture">
+          <div>
+            <img
+              class="fullWidth"
+              src="https://images.ctfassets.net/5de70he6op10/7g7ZHaVt39w0CCLd3O0qke/403209ba2c4f5885fc9bfa13dbd3e462/HomeL1_Gateway_LS_08-1.jpg?w=856&q=80&fm=webp"
+              alt=""
+            />
+            <h2>Anthro Design Services</h2>
+            <p>
+              Let's make your decorating dreams come true — from the cozy
+              comfort of your home.
+            </p>
+            <button>Book a free virtual appointment today</button>
+          </div>
+          <div>
+            <img
+              class="fullWidth"
+              src="https://images.ctfassets.net/5de70he6op10/6qyHgZGFtupOWObJWdV3Wm/8804344079ae4623c4f9d9a45a3b0193/HomeL1_Gateway_LS_08-2.jpg?w=856&q=80&fm=webp"
+              alt=""
+            />
+            <h2>Anthro At Your Service</h2>
+            <p>
+              We're here to help! Discover guides, resources, styling tips & more.
+            </p>
+            <button>Right this way</button>
+          </div>
+          <div>
+            <img
+              class="fullWidth"
+              src="https://images.ctfassets.net/5de70he6op10/k8kDADGs7wBTqS4n0kv06/71bcfaaba47b7dff1f6cd50fd5168724/HomeL1_Gateway_LS_08-3_copy.jpg?w=856&q=80&fm=webp"
+              alt=""
+            />
+            <h2>See It In Person</h2>
+            <p>
+              Whether you're in California or Connecticut, there's a Design Center near you!
+            </p>
+            <button>find a store</button>
+          </div>
+        </div>
+        <div class="marginUpar">
+          <img
+            class="fullWidth"
+            src="https://images.ctfassets.net/5de70he6op10/tnwMf98WrLzJvHORas5fC/381eeaec38219b4659e03a30dd03bb9c/HomeL1_Gateway_LS_04-0.jpg?w=2640&q=80&fm=webp"
+            alt=""
+          />
+        </div>
+
+        <div id="last"><p>*Extra 40% off sale items are final sale. Exclusions apply – see details.</p></div>
+      </div>
+    </div>
+
+    
+    <footer>
+      <div class="section1">
+        <div class="email">
+          <div>
+            <p>Sign Up for Email</p>
+            <p>
+              Receive early access to new arrivals, sales, exclusive content,
+              events and much more!
+            </p>
+          </div>
+          <div>
+            <form action="">
+              <p>Email Address*</p>
+              <input type="text" id="email" />
+              <input type="submit" name="submit" id="submit" />
+            </form>
+          </div>
+        </div>
+        <div>
+          <p>
+            By signing up, you will receive Anthropologie offers, promotions and
+            other commercial messages. You are also agreeing to Anthropologie’s
+            <a href="#">Privacy Policy</a>. You may unsubscribe at any time.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="fcontainer">
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Track Your Order</a></li>
+            <li><a href="#">Start A Return Or Exchange (US)</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">Current Promotions</a></li>
+            <li><a href="#">Product Recalls</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">A Greater Good</a></li>
+            <li><a href="#">Diversity & Inclusion</a></li>
+            <li><a href="#">Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">AnthroPerks</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Trade Membership</a></li>
+            <li><a href="#">Furniture: Guides & Services</a></li>
+            <li><a href="#">Store Pickup & Collection Points</a></li>
+            <li><a href="#">Klarna</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Stay Connected</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Styling Services</a></li>
+            <li><a href="#">Request A Catalog</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-location-dot"></i> Store Locator</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-envelope"></i> Get Email</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="icons">
+        <div>
+          <img
+            src="https://images.ctfassets.net/5de70he6op10/4gWq1G4qLLgmqlNeHfzV2T/55298745127c36c5876f4013434c0c37/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917_Copy_2.svg"
+            alt=""
+          />
+        </div>
+        <div>
+          <i class="fa-brands fa-pinterest"></i>
+        </div>
+        <div>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+        <div>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+      <div class="lstimg">
+        <img
+          src="https://images.ctfassets.net/5de70he6op10/2Lh06CXT4AzVnj4LxvGsQD/a424e10a3b8c9e2e270dc22505bfbfa6/022421_SiteFooter_SMS_SIgnUp.jpg"
+          alt=""
+        />
+      </div>
+      <div class="countries">
+        <div>
+          <a href="#">US</a>
+        </div>
+        <div>
+          <a href="#">France</a>
+        </div>
+        <div>
+          <a href="#">germany</a>
+        </div>
+        <div>
+          <a href="#">italy</a>
+        </div>
+        <div>
+          <a href="#">spain</a>
+        </div>
+        <div>
+          <a href="#">UK</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="leftcopy">
+          <div>
+            <a href="#">Privacy policy</a>
+          </div>
+          <div>
+            <a href="#">Terms of use</a>
+          </div>
+          <div>
+            <a href="#">CA transparancy</a>
+          </div>
+          <div>
+            <a href="#">Accessability</a>
+          </div>
+          <div>
+            <a href="#">URBN.com</a>
+          </div>
+          <div>
+            <a href="#">For CA residents</a>
+          </div>
+        </div>
+        <div class="rightcopy"><p>2022 URBN.com. All Rights Reserved.</p></div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>
+<script>
+    let img=document.querySelector(".c1");
+    let buttons=document.querySelectorAll(".b1");
+
+    let imgArray=[
+      "https://www.architectureartdesigns.com/wp-content/uploads/2016/03/18-5-630x419.jpg",
+      "https://images.ctfassets.net/5de70he6op10/bOVbKHXNFq1OscSf5b1A2/4e2224e4b96639f98fcb1e5f53693942/Furniture_Gateway_11.jpg?w=1302&q=80&fm=webp",
+      "https://images.ctfassets.net/5de70he6op10/22BB4mb9xS4u012ohWo91a/f9b91d352adea2edeb8fcaeb15f1c647/Furniture_Gateway_10.jpg?w=1302&q=80&fm=webp",
+    ]
+   let imgNum=0;
+    buttons[0].addEventListener("click",function(){
+      // console.log("b1")
+        if(imgNum===0){
+            imgNum=imgArray.length-1;
+        }else{
+          imgNum--;
+
+        }
+
+        img.src=imgArray[imgNum];
+
+    })
+
+    buttons[1].addEventListener("click",function(){
+      // console.log("b1");
+        if(imgNum===imgArray.length-1){
+            imgNum=0;
+        }else{
+          imgNum++;
+
+        }
+
+        img.src=imgArray[imgNum];
+        
+    })
+
+    let img1=document.querySelector(".c2");
+    let buttons1=document.querySelectorAll(".b21");
+
+    let imgArray1=[
+      "https://content.r9cdn.net/rimg/himg/53/3c/38/arbisoftimages-35767-LGBRL-P074-Palm-Suite-Terrace.adapt.16x9.1280.720-image.jpg?crop=true&width=500&height=350",
+      "https://images.ctfassets.net/5de70he6op10/3RozyTg8U31JIVlR4jNwzn/4fd58a454cc6316472378cfa8752c858/MaySiteContent_Home_KitchenDining_2x.jpg?w=1440&q=80&fm=webp",
+      "https://images.ctfassets.net/5de70he6op10/5WrlRUjBpKnKJJ8TzlgZlr/b10249b7b655c346999d83c6f258c7f1/JuneSiteContent_Home_Round1_KitchenDining_2x.jpg?w=1440&q=80&fm=webp",
+    ]
+   let imgNum1=0;
+    buttons1[0].addEventListener("click",function(){
+      // console.log("b1")
+        if(imgNum1===0){
+            imgNum1=imgArray1.length-1;
+        }else{
+          imgNum1--;
+
+        }
+
+        img1.src=imgArray1[imgNum1];
+
+    })
+
+    buttons1[1].addEventListener("click",function(){
+      // console.log("b1");
+        if(imgNum1===imgArray1.length-1){
+            imgNum1=0;
+        }else{
+          imgNum1++;
+
+        }
+
+        img1.src=imgArray1[imgNum1];
+        
+    })
+
+    
+
+
+
+</script>

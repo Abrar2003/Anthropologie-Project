@@ -1,0 +1,273 @@
+                        /* CSS For Clothing Page  */
+
+                                                 /* whole content in a single parent div  */
+        #parent {
+            width: 95%;
+            margin: auto;
+            display: flex;
+        }
+
+                                                  /* 1st child div for left filter option  */
+        #left {
+            width: 15%;
+        }
+
+        #left>p {
+            border-bottom: 1px solid rgb(222, 222, 222);
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .left_font>div>a {
+            color: #26262c;
+            text-decoration: none;
+            font-family: "Avenir Book", sans-serif;
+            line-height: 25px;
+            font-size: 12px;
+        }
+
+        #option>div {
+            margin-bottom: 12px;
+        }
+        #option>div:nth-child(1)>a{
+            color: #47afe0;
+            border-bottom: 1px solid #47afe0;
+            
+        }
+
+        #option>div:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+                                                       /* For filtering content  */
+
+        #filter>h4 {
+            font-size: 18px;
+            color: gray;
+        }
+
+        #filter>h4:hover{
+            color: rgb(85, 82, 82);
+        }
+        #filter_heading {
+            border-bottom: 1px solid rgb(222, 222, 222);
+            margin: 40px auto 0px auto;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #filter>div {
+            padding: 20px 0;
+            border-bottom: 1px solid rgb(222, 222, 222);
+        }
+
+        .expand_opt {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .expand_opt:hover {
+            color: rgb(102, 168, 180);
+        }
+        .expand_opt::after{
+            content: "\002B";
+            font-weight: 600;
+            /* color: gray; */    
+        }
+        .expand_opt.active::after{
+            content: "\2212";
+        }
+        #filter>div~div:hover{
+            color: rgb(102, 168, 180);
+        } 
+        .expand_opt{
+            width: 100%;
+            margin: 10px;
+        }
+        .left_font:hover{
+            cursor: pointer;
+        }
+       
+
+                                              /* another 2nd div for sorting product display  */
+        #main {
+            width: 80%;
+            margin: auto;
+        }
+
+        #sort_heading {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        #sorting {
+            display: flex;
+            align-items:center;
+            height: 80px;
+        }
+
+        select {
+            height: 35px;
+            border-radius: 5px;
+            padding: 3px;
+            margin-right: 20px;
+            width: 120px;
+           
+        }
+
+        #sorting>div {
+            margin-top: 5px;
+            margin-right: 10px;
+            font-weight: 200;
+        }
+        #caruser{
+            display: flex;
+        }
+        
+        #caruser>h2{
+            margin-top: 13px;
+            color: gray;
+            font-weight: 100;
+            font-size: 17px;
+        }
+        #caruser>button:first-child{
+            color: rgb(192, 189, 189);
+        }
+        #caruser>button{
+            font-size: 40px;
+            background-color: transparent;
+            border: none;
+            color: rgb(107, 103, 103);
+            margin-bottom: 10px;
+            
+        }
+        #caruser>button:hover{
+            cursor: pointer;
+        }
+        select:hover{
+            cursor: pointer;
+        }
+
+        #cat_title>div{
+            font-family: "" Avenir Medium", sans-serif;";
+            color: #3c3c3f;
+            display: flex;
+            width: 290px;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+                                     /* For product data like image, name, price, color & add to cart button  */
+        #product {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        #product>div>p {
+            font-family: "Avenir Medium", sans-serif;
+            font-size: 13px;
+            color: #26262c;
+            margin: 10px auto 10px auto;
+            margin: auto;
+        }
+
+        #product>div>img {
+            width: 100%;
+        }
+
+        #product>div>img+p:hover {
+            color: rgb(102, 168, 180);
+            cursor: pointer;
+        }
+
+        #product>div>img:hover {
+            cursor: pointer;
+        }
+
+        #product>div>div {
+            display: flex;
+            align-items: center;
+        }
+
+        #Fst_color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #47afe0;
+            margin: 5px;
+        }
+
+        #Snd_color {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #e04847;
+            margin: 5px;
+        }
+
+        #Trd_color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #a7b6c5;
+            margin: 5px;
+        }
+
+        .color:hover {
+            border: 1px solid #6eacc9;
+            cursor: pointer;
+        }
+
+        #purchase_btn{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        #buynow_btn{
+            border: none;
+            height: 30px;
+            width: 80px;
+            border-radius: 3px;
+            background-color: rgba(231, 45, 45, 0.801);
+            color: white;
+            font-weight: 600;
+        }
+        #cart_btn {
+            border: none;
+            height: 30px;
+            font-size: 15px;
+            font-weight: 530;
+            border-radius: 6px;
+            background-color:#4b5666;
+            color: white;
+        }
+
+        #buynow_btn:hover{
+            background-color: rgb(243, 18, 18);
+            color: white;
+            cursor: pointer;
+        }
+
+        #cart_btn:hover {
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+    
+        @media All and (max-width:980px){
+            #product{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }

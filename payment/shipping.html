@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipping</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        margin: 0%;
+        padding: 0%;
+      }
+      #nav {
+        height: 60px;
+        width: 100%;
+        padding: 0% 10%;
+        padding: 0% 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: sticky;
+        top: 0px;
+        background-color: white;
+      }
+      #nav > div:first-child {
+        display: flex;
+        width: 25%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #nav > div > div {
+        height: 25px;
+        border: 1px solid lightgray;
+      }
+      #nav > div:first-child > img {
+        width: 45%;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      a,
+      h3 {
+        text-decoration: none;
+        color: lightgray;
+      }
+      #nav + h3 {
+        width: 80%;
+        margin: 40px auto;
+      }
+      #box {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      #main {
+        width: 70%;
+      }
+      #head {
+        width: 50%;
+        display: flex;
+        border-bottom: 1px solid;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+      }
+      #box h3 {
+        color: black;
+        margin-left: 6px;
+        font-weight: 500;
+      }
+      form {
+        width: 95%;
+        margin: auto;
+      }
+      input,
+      select {
+        height: 45px;
+        width: 45%;
+        font-size: 16px;
+        margin: 10px 15px 30px 0px;
+      }
+      #add1 {
+        width: 92%;
+      }
+      #add2 {
+        width: 92%;
+      }
+      label {
+        width: 45%;
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      #sum {
+        width: 27%;
+        height: 500px;
+      }
+      #sum > div {
+        padding: 0 10%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        height: 350px;
+        /* border: 1px solid blue; */
+      }
+      #sum > div > div {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        margin: -15px 0px;
+      }
+      button {
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+        border: transparent;
+        letter-spacing: 1px;
+        color: white;
+        /* font-weight: bold; */
+        background-color: #4b5666;
+        margin: 30px auto;
+        cursor: pointer;
+      }
+      button + div {
+        border: 1px solid lightgray;
+      }
+      #sum > div > div:nth-child(7) {
+        margin: 10px auto;
+      }
+      #code {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #code > button {
+        border: 1px solid gray;
+        background-color: #fff;
+        color: gray;
+        width: 30%;
+        margin-top: 0%;
+      }
+      #code > input {
+        margin-top: 0%;
+        width: 65%;
+      }
+      #sum > div > div:nth-child(7):hover {
+        color: teal;
+      }
+      #code > button:hover {
+        background-color: #4b5666;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <div>
+        <img
+          src="https://images.ctfassets.net/5de70he6op10/53ZOE4rRqrxcvv0hg2eSLV/a849085e5f600c618132be2475017746/anthro-logo.svg"
+          alt=""
+        />
+        <div></div>
+        <img
+          src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          class="icon"
+          src="https://cdn-icons-png.flaticon.com/128/3916/3916639.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <h3>
+      <a href="shipping.html">Shipping</a> /
+      <a href="">payment</a>
+    </h3>
+    <div id="box">
+      <div id="main">
+        <div id="head">
+          <img
+            class="icon"
+            src="https://cdn-icons.flaticon.com/png/128/697/premium/697722.png?token=exp=1655446955~hmac=38009a996369b630bf3938dd8f4ea3a7"
+            alt=""
+          />
+          <h3>Ship</h3>
+        </div>
+        <h3 style="margin-left: 2.5%">Shipping Address</h3>
+        <form>
+          <label>Country/Region</label><br />
+          <select name="" id="country" value="India" required>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Russia">Russia</option>
+            <option value="China">China</option>
+            <option value="Japan">Japan</option></select
+          ><br />
+          <label>First Name*</label> <label>Last Name*</label><br />
+          <input type="text" name="" id="first" required />
+          <input type="text" name="" id="last" required /><br />
+          <label>Street Address*</label><br />
+          <input
+            type="text"
+            name=""
+            id="add1"
+            placeholder="Building, Statue or Apartment Number"
+            required
+          /><br />
+          <label>Address 2*</label><br />
+          <input
+            type="text"
+            name=""
+            id="add2"
+            placeholder="Building, Statue or Apartment Number"
+            required
+          /><br />
+          <label>City*</label> <label>Province or Region*</label><br />
+          <input type="text" name="" id="city" required />
+          <input
+            type="text"
+            name=""
+            id="reg"
+            placeholder="Province or Region"
+            required
+          /><br />
+          <label>Postcode*</label><br />
+          <input type="text" name="" id="post" required /><br />
+          <label>Daytime Phone*</label><br />
+          <input
+            type="text"
+            name=""
+            id="phone"
+            placeholder="Don't Mention the Country Code"
+            required
+          /><br />
+        </form>
+      </div>
+      <div id="sum">
+        <h3>Order Summary</h3>
+        <div>
+          <div>
+            <p>Subtotal</p>
+            <p id="sub"></p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p id="ship">$60.00</p>
+          </div>
+          <div>
+            <p>Estimated Tax</p>
+            <p>$0.00</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p id="total"></p>
+          </div>
+          <button id="advance">SHIP TO THIS ADDRESS</button>
+          <div></div>
+          <div id="promo">
+            <p>Promo Code</p>
+            <p>+</p>
+          </div>
+          <div id="code">
+            <input type="text" name="" id="disc" />
+            <button id="applied">APPLY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let form = document.querySelector("form");
+  let btn = document.querySelector("#advance");
+  btn.addEventListener("click", submitAddress);
+  function submitAddress() {
+    let obj = {
+      country: form.country.value,
+      firstname: form.first.value,
+      lastname: form.last.value,
+      add1: form.add1.value,
+      add2: form.add2.value,
+      city: form.city.value,
+      code: form.post.value,
+      reg: form.reg.value,
+      phone: form.phone.value,
+    };
+    localStorage.setItem("address", JSON.stringify(obj));
+    let flag = true;
+    for (let i in obj) {
+      if (obj[i] === "") {
+        console.log(obj[i]);
+        flag = false;
+        break;
+      }
+    }
+    if (flag) {
+      localStorage.setItem("address", JSON.stringify(obj));
+      console.log("Address Added");
+      window.location.href = "Shipping2.html";
+    } else {
+      alert("Please fill the right Address");
+      console.log("no");
+    }
+  }
+
+  let price = localStorage.getItem("price") || 200;
+  document.querySelector("#sub").append("$" + price);
+
+  let disc = document.querySelector("#applied");
+  disc.addEventListener("click", discount);
+
+  let total =localStorage.getItem('total') || price + 60;
+  document.querySelector("#total").append("$" + total);
+
+  let flag1 = localStorage.getItem('flag');
+  console.log(flag1);
+
+  if(flag1){
+    disc.removeEventListener('click',discount);
+  }
+  function discount() {
+    let promo = document.querySelector("#disc").value;
+    console.log(promo);
+    if (promo == "SUB20") {
+      total = 0;
+      document.querySelector("#total").innerText='';
+      flag1 = true;
+      disc.removeEventListener("click", discount);
+      price -= ((price / 100) * 20).toFixed(2);
+      document.querySelector("#sub").innerText = "$" + price;
+      total = price + 60;
+      localStorage.setItem('total',total);
+      document.querySelector("#total").append("$" + total);
+      localStorage.setItem('flag',flag1);
+    }
+
+    if (promo == "TOTAL20") {
+      flag1 = true;
+      disc.removeEventListener("click", discount);
+      document.querySelector("#total").innerText = "";
+      total -= ((total / 100) * 20).toFixed(2);
+      localStorage.setItem('total',total);
+      document.querySelector("#total").innerText = "$" + total;
+      localStorage.setItem('flag',flag1);
+    }
+
+    if (promo == "MASAI50") {
+      flag1 = true;
+      disc.removeEventListener("click", discount);
+      document.querySelector("#total").innerText = "";
+      total -= ((total / 100) * 50).toFixed(2);
+      localStorage.setItem('total',total);
+      document.querySelector("#total").innerText = "$" + total;
+      localStorage.setItem('flag',flag1);
+    }
+}
+</script>

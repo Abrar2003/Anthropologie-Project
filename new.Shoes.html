@@ -860,10 +860,12 @@ document.querySelector("#product").append(div);
 div.append(img, name, currency, price, br1, div_col, div_btn);
 
 function buynow() {
-let buyingItem = {
-Price: elem.price
-}
+// let buyingItem = {
+// Price: elem.price
+// }
 // console.log(buyingItem)
+    window.location.href="payment.html";
+    alert("redirect to payment page");
 };
 function getincart() {
 let addedItem = {
